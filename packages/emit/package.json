@@ -1,0 +1,27 @@
+{
+  "name": "@product-map/emit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure projections of manifests to human- and agent-readable text",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings=0"
+  },
+  "dependencies": {
+    "@product-map/spec": "workspace:*"
+  },
+  "devDependencies": {
+    "@config/eslint": "workspace:*",
+    "@config/typescript": "workspace:*",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.6.0",
+    "typescript": "~7.0.2",
+    "vitest": "^4.1.10"
+  }
+}

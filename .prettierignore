@@ -1,0 +1,11 @@
+dist/
+node_modules/
+.remember/
+.turbo/
+coverage/
+pnpm-lock.yaml
+.pnpm-store/
+docs/reference/product-map/
+examples/
+packages/spec/schemas/
+plugins/product-map/skills/*/references/

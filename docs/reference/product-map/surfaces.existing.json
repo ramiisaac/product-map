@@ -1,0 +1,306 @@
+{
+  "contentHash": "5a11b73ed8974f74d9b8010a6febc01da7525f053a2bf529f66c9af6dc875e70",
+  "generatedFrom": {
+    "commit": null,
+    "sources": [
+      ".claude-plugin/marketplace.json",
+      "docs/reference/product-map/extract.local.mjs",
+      "integrations/github-action/action.yml",
+      "packages/derive/package.json",
+      "packages/discovery/package.json",
+      "packages/emit/package.json",
+      "packages/engine/package.json",
+      "packages/engine/src/registry.ts",
+      "packages/extract/package.json",
+      "packages/pmap/package.json",
+      "packages/runtime/package.json",
+      "packages/spec/package.json",
+      "plugins/product-map/.claude-plugin/plugin.json",
+      "plugins/product-map/skills"
+    ],
+    "workingTree": "not-applicable"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "audience": [
+        "developer",
+        "agent"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-design-handoff",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-guide-extractors",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-guide-overview",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-ingest",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-refresh",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-review",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-setup",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:agent-skill:product-map.pmap-validate",
+          "note": "shipped by the product-map plugin",
+          "via": "explicit"
+        }
+      ],
+      "entry": {
+        "kind": "config-file",
+        "value": "plugins/product-map/.claude-plugin/plugin.json"
+      },
+      "id": "surface:agent-plugin:product-map",
+      "name": "product-map plugin",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/.claude-plugin/plugin.json"
+        ],
+        "source": "plugins/product-map/.claude-plugin/plugin.json"
+      },
+      "purpose": "Skills and commands for consuming-repo agents: inspect what any repo ships from the CLI, install and run pmap, keep product-map manifests fresh, author repo-local extractors, and run the Claude Design handoff loop.",
+      "status": "live",
+      "surfaceType": "agent-plugin"
+    },
+    {
+      "audience": [
+        "developer",
+        "agent"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:command:pmap.all",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.bundle",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.check-fresh",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.diff",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.digest",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.doctor",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.explain",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.extract",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.fleet",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.ingest",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.init",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.map",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.render",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.show",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.validate",
+          "note": "declared in the pmap command registry",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:package:product-map",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "pmap"
+      },
+      "id": "surface:cli:pmap",
+      "name": "pmap CLI",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Extract, validate, map, diff, render, and freshness-check product-map.v1 manifests for a repository, and ingest planned manifests returned by a design process.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:package:product-map",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "product-map"
+      },
+      "id": "surface:cli:product-map",
+      "name": "product-map CLI",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/pmap/package.json",
+          "packages/pmap/./dist/cli.js"
+        ],
+        "source": "packages/pmap/package.json"
+      },
+      "purpose": "Command-line entrypoint `product-map` from product-map.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:command:pmap.check-fresh",
+          "note": "invoked by the Action's run block",
+          "via": "explicit"
+        },
+        {
+          "capabilityId": "cap:command:pmap.validate",
+          "note": "invoked by the Action's run block",
+          "via": "explicit"
+        }
+      ],
+      "entry": {
+        "kind": "config-file",
+        "value": "integrations/github-action/action.yml"
+      },
+      "id": "surface:github-action:product-map-freshness",
+      "name": "product-map freshness Action",
+      "placement": {
+        "current": "integrations/github-action",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "integrations/github-action/action.yml"
+        ],
+        "source": "integrations/github-action/action.yml"
+      },
+      "purpose": "Run `pmap check-fresh` as a CI gate so a stale product map fails the build.",
+      "status": "live",
+      "surfaceType": "github-action"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [],
+      "entry": {
+        "kind": "config-file",
+        "value": ".claude-plugin/marketplace.json"
+      },
+      "id": "surface:registry:product-map",
+      "name": "ramiisaac plugin marketplace",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          ".claude-plugin/marketplace.json"
+        ],
+        "source": ".claude-plugin/marketplace.json"
+      },
+      "purpose": "Claude Code plugin marketplace distributing 1 plugin from this repository.",
+      "status": "live",
+      "surfaceType": "registry"
+    }
+  ],
+  "kind": "surface",
+  "schemaVersion": "product-map.v1",
+  "scope": "product-map",
+  "stance": "existing"
+}

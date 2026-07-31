@@ -1,0 +1,47 @@
+{
+  "name": "product-map-monorepo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "format": "prettier --write --ignore-unknown .",
+    "format:check": "prettier --check --ignore-unknown .",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "generate": "node scripts/generate.mjs",
+    "generate:check": "node scripts/generate.mjs --check",
+    "pmap": "tsx packages/pmap/src/cli.ts",
+    "examples:setup": "node scripts/examples/setup.mjs",
+    "examples:generate": "node scripts/examples/regenerate.mjs",
+    "examples:check": "node scripts/examples/check.mjs",
+    "test:packages": "node scripts/smoke-packages.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version && node plugins/product-map/scripts/sync-version.mjs && node integrations/github-action/scripts/sync-version.mjs && node scripts/generate.mjs",
+    "release": "turbo build --filter=product-map --filter=@product-map/spec && changeset publish",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.1",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@config/eslint": "workspace:*",
+    "@config/typescript": "workspace:*",
+    "lefthook": "^2.1.10",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.1",
+    "turbo": "^2.10.6",
+    "typescript": "~7.0.2"
+  },
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lefthook"
+    ]
+  }
+}

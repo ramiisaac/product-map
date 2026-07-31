@@ -1,0 +1,217 @@
+{
+  "contentHash": "76dd5abdacbd07a9167f6c39520b950275a8a59f4d4d66b8ef3f492a61eab0b0",
+  "generatedFrom": {
+    "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
+    "sources": [
+      "package.json",
+      "site/package.json",
+      "src/commands"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:command:netlify.agents",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.api",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.blobs",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.build",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.claim",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.clone",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.completion",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.create",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.database",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.deploy",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.dev",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.dev-exec",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.env",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.functions",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.init",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.link",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.login",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.logout",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.logs",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.open",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.recipes",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.serve",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.sites",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.status",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.switch",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.teams",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.unlink",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:netlify.watch",
+          "note": "command module in src/commands",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "netlify"
+      },
+      "id": "surface:cli:netlify",
+      "name": "netlify CLI",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "package.json",
+          "src/commands"
+        ],
+        "source": "package.json"
+      },
+      "purpose": "Command-line entrypoint `netlify` from netlify-cli.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [],
+      "entry": {
+        "kind": "bin",
+        "value": "ntl"
+      },
+      "id": "surface:cli:ntl",
+      "name": "ntl CLI",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "package.json",
+          "./bin/run.js"
+        ],
+        "source": "package.json"
+      },
+      "purpose": "Command-line entrypoint `ntl` from netlify-cli.",
+      "status": "live",
+      "surfaceType": "cli"
+    }
+  ],
+  "kind": "surface",
+  "schemaVersion": "product-map.v1",
+  "scope": "netlify-cli",
+  "stance": "existing"
+}

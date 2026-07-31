@@ -1,0 +1,227 @@
+{
+  "contentHash": "67e6afbd6ac8c75a24be0cccdb747878939145a02b80ed9b9bf6b542a63f4511",
+  "generatedFrom": {
+    "commit": null,
+    "derivedFrom": [
+      "5a11b73ed8974f74d9b8010a6febc01da7525f053a2bf529f66c9af6dc875e70",
+      "95881986b8eccb44759ac11717fcf59a353a797696e901c17c4044e71b5bc499"
+    ],
+    "sources": [
+      "surfaces.existing.json",
+      "capabilities.existing.json"
+    ],
+    "workingTree": "not-applicable"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "capabilityId": "cap:package:derive",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:discovery",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:emit",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:engine",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:extract",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:runtime",
+      "note": "Not referenced by any surface, and not externally consumable.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:package:spec",
+      "note": "Not referenced by any surface binding.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-design-handoff",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-guide-extractors",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-guide-overview",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-ingest",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-refresh",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-review",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-setup",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:agent-skill:product-map.pmap-validate",
+      "note": "shipped by the product-map plugin",
+      "relationship": "bound",
+      "surfaceId": "surface:agent-plugin:product-map"
+    },
+    {
+      "capabilityId": "cap:command:pmap.all",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.bundle",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.check-fresh",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.diff",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.digest",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.doctor",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.explain",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.extract",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.fleet",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.ingest",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.init",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.map",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.render",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.show",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:command:pmap.validate",
+      "note": "declared in the pmap command registry",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:package:product-map",
+      "note": "bin declared by this package",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:pmap"
+    },
+    {
+      "capabilityId": "cap:package:product-map",
+      "note": "bin declared by this package",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:product-map"
+    },
+    {
+      "capabilityId": "cap:command:pmap.check-fresh",
+      "note": "invoked by the Action's run block",
+      "relationship": "bound",
+      "surfaceId": "surface:github-action:product-map-freshness"
+    },
+    {
+      "capabilityId": "cap:command:pmap.validate",
+      "note": "invoked by the Action's run block",
+      "relationship": "bound",
+      "surfaceId": "surface:github-action:product-map-freshness"
+    },
+    {
+      "note": "No declared capability bindings; candidates are proposals only.",
+      "relationship": "surface-unbound",
+      "surfaceId": "surface:registry:product-map"
+    }
+  ],
+  "kind": "map",
+  "schemaVersion": "product-map.v1",
+  "scope": "product-map",
+  "stance": "derived"
+}

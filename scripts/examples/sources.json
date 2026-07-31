@@ -1,0 +1,20 @@
+[
+  {
+    "name": "netlify-cli",
+    "repository": "https://github.com/netlify/cli.git",
+    "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
+    "license": "MIT"
+  },
+  {
+    "name": "mcp-inspector",
+    "repository": "https://github.com/modelcontextprotocol/inspector.git",
+    "commit": "ac3c1a122a5e072a200c99869fc0cd8bfa660ece",
+    "license": "MIT"
+  },
+  {
+    "name": "shadcn-ui",
+    "repository": "https://github.com/shadcn-ui/ui.git",
+    "commit": "4baadbc6517070ae8f8feb2c97037adc2b305544",
+    "license": "MIT"
+  }
+]

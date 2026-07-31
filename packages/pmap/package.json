@@ -1,0 +1,76 @@
+{
+  "name": "product-map",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "pmap — extract, validate, map, diff, render, and freshness-check product-map.v1 manifests",
+  "license": "MIT",
+  "author": "ramiisaac",
+  "homepage": "https://github.com/ramiisaac/product-map#readme",
+  "bugs": "https://github.com/ramiisaac/product-map/issues",
+  "keywords": [
+    "product-map",
+    "architecture",
+    "monorepo",
+    "cli",
+    "design-drift"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiisaac/product-map.git",
+    "directory": "packages/pmap"
+  },
+  "bin": {
+    "pmap": "./dist/cli.js",
+    "product-map": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "prompts"
+  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "test": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings=0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@product-map/spec": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@config/eslint": "workspace:*",
+    "@config/typescript": "workspace:*",
+    "@product-map/derive": "workspace:*",
+    "@product-map/discovery": "workspace:*",
+    "@product-map/emit": "workspace:*",
+    "@product-map/engine": "workspace:*",
+    "@product-map/extract": "workspace:*",
+    "@product-map/runtime": "workspace:*",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^10.7.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.1",
+    "typescript": "~7.0.2",
+    "vitest": "^4.1.10"
+  }
+}

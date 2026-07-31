@@ -1,0 +1,145 @@
+# product-map.v1 — Normative Specification
+
+This document is the contract. The zod schemas in `packages/spec` are its executable form; where prose and schema disagree, the schema wins and this document has a bug.
+
+## 1. Model
+
+Two axes factor every fact about a repo's product:
+
+- **kind** — `surface` (anything a human or integration touches: routes, CLI commands, TUI screens, LSP features, IDE views, emails, notifications, PR-bot output, MCP tools, generated reports, docs pages) or `capability` (anything the system can do: routes, queries, mutations, commands, events, entities, schemas, jobs, email contracts, LSP methods, checks, reporters). Derived manifests add `map`, `diff`, and `fleet`.
+- **stance** — `existing` (extracted from the repo at a commit), `planned` (authored design intent, usually from Claude Design), or `derived` (computed maps and diffs). `derived` is not a third authored stance: stance carries a real choice only for `surface` and `capability` manifests, which are `existing` or `planned`, and for `map`, `diff`, and `fleet` it is fixed by the kind and merely marks the manifest as computed.
+
+Four authored manifests per repo plus derived files, all living in `docs/reference/product-map/`:
+
+```text
+docs/reference/product-map/
+  surfaces.existing.json
+  surfaces.planned.json
+  capabilities.existing.json
+  capabilities.planned.json
+  maps/        map.existing.json, map.planned.json, planned-surfaces-vs-existing-capabilities.json, existing-surfaces-vs-planned-capabilities.json
+  diffs/       surfaces.diff.json, capabilities.diff.json
+  generated/   *.generated.md (rendered from JSON; never a source of truth)
+  prompts/     vendored prompt templates
+  schemas/     vendored JSON Schemas for this schemaVersion
+```
+
+Two derived operations within a repo: **map** is the cross-kind join (which surfaces bind to which capabilities), **diff** is the same-kind cross-stance comparison (what the design adds/removes/changes versus reality). Across repos, **fleet** rolls several repositories into one derived manifest — one entry per repository recording the shape of its map, never its contents. Entries are read from committed manifests by default, or extracted live; each entry's state records which, so a fleet manifest never implies a committed map that does not exist.
+
+## 2. Envelope
+
+Every file in the directory carries the same envelope:
+
+```json
+{
+  "schemaVersion": "product-map.v1",
+  "kind": "surface | capability | map | diff | fleet",
+  "stance": "existing | planned | derived",
+  "scope": "<repository name, or the fleet name when kind is fleet>",
+  "generatedFrom": {
+    "commit": "<sha, or null for planned manifests authored outside the repo>",
+    "workingTree": "clean | dirty | not-applicable",
+    "sources": ["<files/registries/design-project locators>"],
+    "derivedFrom": ["<contentHash of each input manifest — required when stance is derived>"]
+  },
+  "generator": { "name": "pmap | claude-design | manual", "version": "..." },
+  "contentHash": "<sha256 hex over the canonical items array>",
+  "items": []
+}
+```
+
+Stance/kind coherence rules (enforced by `validateManifest`): `map`, `diff`, and `fleet` manifests are always `derived`; `surface` and `capability` manifests are never `derived`; `derived` manifests must record `derivedFrom` hashes. These rules are what make the point above enforceable rather than conventional: a computed manifest can never claim an authored stance, and an authored one can never claim to be computed.
+
+## 3. Determinism
+
+- Canonical JSON: object keys sorted recursively, 2-space indent, LF, exactly one trailing newline, no non-finite numbers. Committed bytes must equal `canonicalStringify(parsed)` — this is what makes the CI freshness gate a byte-compare.
+- No wall-clock timestamps anywhere in JSON. The commit SHA in `generatedFrom` is the time axis.
+- `contentHash` = sha256 over the canonical serialization of `items` only, so envelope metadata edits never churn it and item edits always do.
+- Items sort by id (surface/capability) or by their first reference id (map/diff entries); duplicate ids are invalid.
+- Generated Markdown renders from JSON, carries a `<!-- generated from <file>@<contentHash> -->` header, and is never hand-edited.
+
+## 4. Ids
+
+```text
+surface:<surfaceType>:<slug>     e.g. surface:cli:example, surface:email:scan-complete
+cap:<capabilityKind>:<slug>      e.g. cap:command:scan, cap:route:artifacts-upload
+repo:<slug>                      fleet entries only, e.g. repo:git-inspector
+```
+
+Slugs are lowercase, start alphanumeric, and may contain `.` and `-`. The type/kind segment must equal the item's `surfaceType`/`kind` field. Ids are stable across renames: a rename keeps the id and changes `name`; minting a new id is a remove+add unless `product-map.config.mjs` declares the pair in `renames`, which is the only way a diff records `renamed` with `fromId`/`toId`.
+
+## 5. Vocabularies
+
+Authoritative lists live in `packages/spec/src/vocab.ts`. Summary:
+
+- **surfaceType** (28): marketing, docs, dashboard, admin, playground, explorer, report, vscode, jetbrains, zed, lsp, cli, tui, email, notification, github-action, github-app, mcp, api-docs, sdk-docs, registry, build-plugin, lint-plugin, desktop, macos, browser-extension, agent-plugin, other.
+- **capabilityKind** (29): route, query, mutation, action, command, event, stream, entity, schema, service, package, config, extension-api, email-contract, lsp-method, diagnostic, webhook, job, queue-job, mcp-tool, check, rule, reporter, plugin-api, report, artifact, agent-skill, agent-subagent, other.
+- **fleet state**: mapped, scanned, not-mapped, invalid. `mapped` means the entry was read from that repository's committed manifests; `scanned` means it was extracted live during the fleet run and nothing was committed there.
+- **surface status**: live, partial, prototype, planned, absent, stale, unknown. **capability status**: live, partial, preview, planned, absent, deprecated, unknown. Status is read within its manifest's stance. In an existing manifest it is what extraction observed, and an adapter that cannot tell emits `unknown` rather than guessing, so `planned` and `absent` do not normally occur there. In a planned manifest it records the intended rollout state: `planned` marks an item the design defers, `absent` one it deliberately retires. Built-versus-intended is the diff's job, never the status field's.
+- **confidence**: high (registry/manifest-derived), medium (filesystem-pattern-derived), low (docs/claims-derived).
+- **placement verdict**: correct, misplaced, unknown — placement is a field, not a status, so "live but in the wrong package" (e.g. email templates inside a web app) is representable without corrupting the status axis.
+- **bind via**: explicit, inferred-high, candidate-only. `candidate-only` is a proposal; tools never treat it as a real binding.
+- **reach**: external, internal, unknown — whether anything outside the repository can consume a capability directly. Orthogonal to `status`, in the same way placement is: an unpublished package is mature, shipping code that simply is not distributed, so it is `status: live` + `reach: internal`. Reach is observed or unknown, never inferred from the kind alone: `DEFAULT_REACH` (`packages/spec/src/vocab.ts`) is `internal` only for the kinds whose internality is definitional — entity, schema, service, config, diagnostic, job, queue-job, check, rule, reporter, report, artifact — and `unknown` for every context-dependent kind, because an internal admin dashboard's routes are routes too. An adapter records `external` only where it observed distribution: the package-exports adapter from a manifest's `private` field, the CLI command adapter from its owning package's publication, and the MCP, Claude-plugin, LSP, VS Code, and Supabase-functions adapters from manifests and deployment shapes that make the item reachable by construction.
+- **map relationship** (5): bound, bound-proposed, bound-conflict, surface-unbound, capability-unbound. Every value describes the link and nothing else. Deliberately absent: the stance (the manifest envelope records it, so an unreferenced capability is `capability-unbound` whether the surfaces are existing or planned), item-level facts (`placement.verdict` and `reach` live on the item, and a map that restated them could disagree with them), and distinctions recoverable from the entry's own shape — a `surface-unbound` entry carrying a `capabilityId` named a capability that does not exist, and without one it declared no binding at all.
+- **diff change** (4): added, removed, changed, renamed. Each value says what happened to an id and nothing else; the detail is the entry's JSON-pointer `fieldChanges`. `renamed` has exactly one producer, a `renames` entry in `product-map.config.mjs`, and lineage is never inferred: the declaration is honored only when `fromId` is present on the from side and absent from the to side and `toId` is present on the to side and absent from the from side, in which case the diff emits one `renamed` entry whose `fieldChanges` compare the two items. A declaration that does not line up falls back to `added`/`removed` and is reported as a diagnostic on stderr.
+
+Capability items carry a required `reach`. Surfaces do not: a surface is by definition something a human or integration touches, so the question does not arise.
+
+Surface items carry a required `purpose`; capability items carry an optional one, because an extractor that cannot know a capability's purpose must omit it rather than invent prose. `doctrine` is never a description — it records the architectural rules an item is bound by, and rendered inventories read `purpose`.
+
+Unknown/missing/unbound are first-class committed states. Tools must never guess to avoid them; the mapper records fuzzy matches as scored `candidates` and stops.
+
+## 6. Operations contract
+
+| Op          | Input                                    | Output                     | Guarantees                                                                                                                                                                                                                                                                                                             |
+| ----------- | ---------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| extract     | repo tree + config + commit              | `*.existing.json`          | reads only; item-level provenance + confidence; an adapter that cannot determine a field emits `unknown` rather than omitting the item; an adapter that throws is isolated — recorded and reported by `doctor` as `adapter-failure` while the remaining adapters still run; only the repo-local extractor fails closed |
+| validate    | any manifest                             | ok/issues                  | schema shape, id grammar + segment coherence, uniqueness, sort order, stance/kind coherence, contentHash integrity; the CLI additionally enforces slot role (kind/stance for the file's path) and canonical on-disk bytes, and flags unexpected JSON                                                                   |
+| map         | one surfaces + one capabilities manifest | `maps/*.json` (derived)    | never binds silently; candidates carry score + reason                                                                                                                                                                                                                                                                  |
+| diff        | same-kind pair across stances            | `diffs/*.json` (derived)   | id-keyed; field-level changes; lineage never inferred — `renamed` comes only from a declared `renames` pair in `product-map.config.mjs`, and a declaration the diff cannot honor falls back to added/removed with a warning on stderr                                                                                  |
+| render      | manifests                                | `generated/*.generated.md` | pure projection; refuses stale inputs (hash mismatch)                                                                                                                                                                                                                                                                  |
+| check-fresh | repo + committed dir                     | exit 0/1 + drift report    | regenerate-and-byte-compare, preserving the recorded commit, working-tree state, and generator; planned manifests exempt from regeneration but not validation                                                                                                                                                          |
+
+`check-fresh` preserves the existing manifest's recorded commit, working-tree state, and `generator` during comparison. This prevents an artifact-only commit, a clean/dirty transition, or a tool-version bump alone from creating false drift; extracted product semantics, evidence sources, maps, diffs, and rendered output are still regenerated and byte-compared, so a version that does change extraction still drifts through the items.
+
+Idempotence: every operation re-run on the same commit produces byte-identical output.
+
+## 7. Repo-specific extension points
+
+Two mechanisms let a repo carry information the generic adapters cannot know, without breaking parseability:
+
+- **`ext` fields.** Every item, map/diff entry, and manifest envelope accepts an optional `ext` object — a namespaced bag (key convention: `<repo-or-tool>.<key>`, like OpenAPI `x-` fields). Everything else stays `strictObject`; core tools validate, hash, and render around `ext` and pass it through untouched. Item-level `ext` participates in the contentHash (it is item data); envelope-level `ext` does not.
+- **Local extractor.** A repo may own `docs/reference/product-map/extract.local.mjs`. During `pmap extract` it runs as a child process (`node extract.local.mjs <repoRoot>` by default, 60s timeout) and prints one JSON object to stdout: `{ "surfaces": [...], "capabilities": [...], "sources": [...] }` whose items are ordinary product-map.v1 items (repo-specific payloads go in `ext`). Rules: every item is schema-validated on ingest — invalid items are dropped with a reported issue, never silently, and the run then fails closed, because a local extractor is the repository's authoritative voice and writing manifests without its items would be worse than writing nothing (`--allow-partial-local` is the explicit opt-out); on id collision the local extractor supersedes generic adapters (it is the repo's authoritative voice — the registry-hook mechanism); output must be deterministic for the same commit, because it participates in `check-fresh` like all extraction. Typical uses: read an operations/command registry, a generated OpenAPI document, an email-kind union, or a surface-matrix the repo already maintains, and emit high-confidence items the filesystem heuristics cannot see.
+
+  The interpreter is not fixed. `localExtractor` in `product-map.config.mjs` overrides the command, its arguments, the timeout, and the output buffer limit, so a repository whose truth is easiest to read in Python, Go, or a compiled binary can emit the same JSON. The repo root is always appended as the final argument, and every other rule above still applies.
+
+## 8. Repository configuration
+
+An optional root `product-map.config.mjs` default-exports a `RepoConfig`, exported as a type from `@product-map/spec` so the file can be type-checked against the published contract. Every field is optional and the file's absence is the common case.
+
+| Field                                      | Effect                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `repoName`                                 | The `scope` stamped into manifests, for a repository whose directory name lags a product rename.                                                                                                                                                                                                                                                                                   |
+| `nonProductDirs`                           | Extra exact directory-segment names treated as non-product, added to the built-in list — segment names, not globs or prefixes.                                                                                                                                                                                                                                                     |
+| `ignore`                                   | Globs (`*`, `**`, `?`) hidden from every adapter. A pattern matches both the directory it names and everything beneath it.                                                                                                                                                                                                                                                         |
+| `adapters.exclude`                         | Adapter names not to run. A name no adapter provides is an error, never a silent no-op.                                                                                                                                                                                                                                                                                            |
+| `binds`                                    | Declared surface-to-capability bindings for wiring no convention reveals. An entry naming an item that was not extracted is recorded in `skipped`, never asserted.                                                                                                                                                                                                                 |
+| `renames`                                  | Declared `fromId`/`toId` lineage consumed by `diff`, the only producer of a `renamed` entry. A declaration the diff cannot honor — the ids are not the diff's kind, or either id is not strictly present on one side and absent from the other — warns on stderr and falls back to added/removed.                                                                                  |
+| `canonicalPlacements`                      | Misplacement doctrine: items whose placement matches `where` but does not start with `canonical` become `placement.verdict: misplaced`. `where` is a JavaScript regular expression, compiled up front so an invalid one fails extraction with an error naming the config file; `canonical` is a path prefix; the optional `kinds` accepts only surface types and capability kinds. |
+| `overrides`                                | Per-id field overrides merged onto extracted items. A key naming an item that was not extracted is recorded in `skipped` and surfaces as a `doctor` error.                                                                                                                                                                                                                         |
+| `outputs`                                  | Which projections to write: `markdown`, `digest`.                                                                                                                                                                                                                                                                                                                                  |
+| `localExtractor`                           | `command`, `args`, `timeoutMs`, `maxBufferBytes` for the local extractor.                                                                                                                                                                                                                                                                                                          |
+| `mapping`, `render`, `digest`, `discovery` | Per-stage tuning: candidate thresholds, truncation limits, token budget, crawl depth.                                                                                                                                                                                                                                                                                              |
+| `concurrency`                              | Bound on cross-repository parallelism.                                                                                                                                                                                                                                                                                                                                             |
+
+Configuration changes committed artifacts; command-line flags do not. A flag that moved committed bytes would make `check-fresh` report drift for anyone who passed a different value, so `--max-tokens` budgets the digest on stdout and leaves the committed digest alone.
+
+## 9. Write boundaries
+
+`pmap` writes only `docs/reference/product-map/` inside a target repo (plus an optional root `product-map.config.mjs` at adoption time). Extraction never modifies source. Committing follows each repo's own git discipline. Planned manifests are authored by Claude Design (hosted; paste-and-validate) and gated by `validate` before acceptance.
+
+## 10. Versioning
+
+`schemaVersion` is `product-map.v1`. Within v1, vocabulary additions are backward compatible; removals, renames, or envelope changes require `product-map.v2` and a migration note. JSON Schemas for the current version are emitted to `packages/spec/schemas/` and vendored into consuming repos by `pmap init`.
+
+The emitted schemas are the reader contract and validate the grammar, not the closed vocabularies: id fields carry the id grammar (the type-segment-equals-field rule is enforced semantically, not by the pattern) and the additive vocabularies carry the value grammar plus a description listing the values known at emit time. The writing tool enforces the closed vocabularies, so a manifest is still written from an exact enum — but a vendored schema outlives the version that wrote it, and this is what makes "additions are backward compatible within v1" true for readers as well as writers. The structural vocabularies — manifest kind, stance, working-tree state, and `schemaVersion` — stay closed, because changing one of those is v2 by definition and a reader is right to reject an unknown value.

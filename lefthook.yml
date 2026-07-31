@@ -1,0 +1,12 @@
+pre-commit:
+  commands:
+    generate:
+      # Regenerates every derived artifact and stages what changed, so a commit
+      # can never carry a source edit without its generated counterpart. CI runs
+      # the same registry with --check.
+      run: node scripts/generate.mjs --stage
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}

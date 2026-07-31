@@ -1,0 +1,34 @@
+name: Extraction fidelity
+description: pmap missed something the repository ships, or invented something it does not.
+labels: [extraction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing: if the truth lives somewhere the filesystem conventions cannot see — a command registry, a generated OpenAPI document, an operations table — the supported fix is a repository-local `extract.local.mjs`. See [docs/AUTHORING-LOCAL-EXTRACTORS.md](../../docs/AUTHORING-LOCAL-EXTRACTORS.md). File this when a generic convention should have been recognized and was not.
+  - type: input
+    id: version
+    attributes:
+      label: pmap version
+      description: Output of `pmap --version`.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have been extracted
+      description: The surfaces or capabilities you expected, and the files that make them real.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What pmap produced
+      description: Relevant entries from `surfaces.existing.json` / `capabilities.existing.json`, or the counts line from `pmap extract`.
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public repository that reproduces it
+      description: A public repository and commit is by far the most useful thing you can provide — it can become a test fixture.

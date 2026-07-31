@@ -1,0 +1,495 @@
+{
+  "contentHash": "8063a18b3e80e1514f422dcf94cfe087c96fb96c2558f531f3c5392636e4d097",
+  "generatedFrom": {
+    "commit": "4baadbc6517070ae8f8feb2c97037adc2b305544",
+    "sources": [
+      "apps/v4/app",
+      "packages/helpers/package.json",
+      "packages/react/package.json",
+      "packages/shadcn/package.json",
+      "packages/shadcn/src/commands"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "id": "cap:command:shadcn.add",
+      "kind": "command",
+      "name": "shadcn add",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/add.ts",
+          "packages/shadcn/src/commands/registry/add.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.apply",
+      "kind": "command",
+      "name": "shadcn apply",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/apply.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.build",
+      "kind": "command",
+      "name": "shadcn build",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/build.ts",
+          "packages/shadcn/src/commands/registry/build.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.diff",
+      "kind": "command",
+      "name": "shadcn diff",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/diff.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.docs",
+      "kind": "command",
+      "name": "shadcn docs",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/docs.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.eject",
+      "kind": "command",
+      "name": "shadcn eject",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/eject.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.info",
+      "kind": "command",
+      "name": "shadcn info",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/info.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.init",
+      "kind": "command",
+      "name": "shadcn init",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/init.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.mcp",
+      "kind": "command",
+      "name": "shadcn mcp",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/mcp.ts",
+          "packages/shadcn/src/commands/registry/mcp.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.migrate",
+      "kind": "command",
+      "name": "shadcn migrate",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/migrate.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.preset",
+      "kind": "command",
+      "name": "shadcn preset",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/preset.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.search",
+      "kind": "command",
+      "name": "shadcn search",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/search.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:shadcn.view",
+      "kind": "command",
+      "name": "shadcn view",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "packages/shadcn/src/commands/view.ts"
+        ],
+        "source": "packages/shadcn/src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 2
+      },
+      "id": "cap:package:helpers",
+      "kind": "package",
+      "name": "@shadcn/helpers",
+      "placement": {
+        "current": "packages/helpers",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/helpers/package.json"
+        ],
+        "source": "packages/helpers/package.json"
+      },
+      "purpose": "Small helpers for developing apps.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1
+      },
+      "id": "cap:package:react",
+      "kind": "package",
+      "name": "@shadcn/react",
+      "placement": {
+        "current": "packages/react",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/react/package.json"
+        ],
+        "source": "packages/react/package.json"
+      },
+      "purpose": "Unstyled components for React.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 8
+      },
+      "id": "cap:package:shadcn",
+      "kind": "package",
+      "name": "shadcn",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/shadcn/package.json"
+        ],
+        "source": "packages/shadcn/package.json"
+      },
+      "purpose": "Add components to your apps.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "id": "cap:route:v4-api-search",
+      "kind": "route",
+      "name": "/api/search",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/api/search"
+        ],
+        "source": "apps/v4/app/api/search/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-init",
+      "kind": "route",
+      "name": "/init",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/(app)/(create)/init"
+        ],
+        "source": "apps/v4/app/(app)/(create)/init/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-init-md",
+      "kind": "route",
+      "name": "/init/md",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/(app)/(create)/init/md"
+        ],
+        "source": "apps/v4/app/(app)/(create)/init/md/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-init-v0",
+      "kind": "route",
+      "name": "/init/v0",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/(app)/(create)/init/v0"
+        ],
+        "source": "apps/v4/app/(app)/(create)/init/v0/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-llm-slug-catchall",
+      "kind": "route",
+      "name": "/llm/slug-catchall",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/(app)/llm/[[...slug]]"
+        ],
+        "source": "apps/v4/app/(app)/llm/[[...slug]]/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-r-registries.json",
+      "kind": "route",
+      "name": "/r/registries.json",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/r/registries.json"
+        ],
+        "source": "apps/v4/app/r/registries.json/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-rss.xml",
+      "kind": "route",
+      "name": "/rss.xml",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/rss.xml"
+        ],
+        "source": "apps/v4/app/rss.xml/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    },
+    {
+      "id": "cap:route:v4-typeset.css",
+      "kind": "route",
+      "name": "/typeset.css",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "apps/v4/app/typeset.css"
+        ],
+        "source": "apps/v4/app/typeset.css/route.ts"
+      },
+      "reach": "unknown",
+      "status": "live",
+      "surfaceArea": "api"
+    }
+  ],
+  "kind": "capability",
+  "schemaVersion": "product-map.v1",
+  "scope": "shadcn-ui",
+  "stance": "existing"
+}

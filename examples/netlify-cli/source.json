@@ -1,0 +1,6 @@
+{
+  "name": "netlify-cli",
+  "repository": "https://github.com/netlify/cli.git",
+  "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
+  "license": "MIT"
+}

@@ -1,0 +1,698 @@
+{
+  "contentHash": "95881986b8eccb44759ac11717fcf59a353a797696e901c17c4044e71b5bc499",
+  "generatedFrom": {
+    "commit": null,
+    "sources": [
+      ".claude-plugin/marketplace.json",
+      "docs/reference/product-map/extract.local.mjs",
+      "integrations/github-action/action.yml",
+      "packages/derive/package.json",
+      "packages/discovery/package.json",
+      "packages/emit/package.json",
+      "packages/engine/package.json",
+      "packages/engine/src/registry.ts",
+      "packages/extract/package.json",
+      "packages/pmap/package.json",
+      "packages/runtime/package.json",
+      "packages/spec/package.json",
+      "plugins/product-map/.claude-plugin/plugin.json",
+      "plugins/product-map/skills"
+    ],
+    "workingTree": "not-applicable"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "id": "cap:agent-skill:product-map.pmap-design-handoff",
+      "kind": "agent-skill",
+      "name": "pmap-design-handoff",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-design-handoff/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-design-handoff/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"prepare a launch bundle\", \"hand off to Claude Design\", \"assemble a design bundle\", \"ingest a design\", \"reconcile a design export\", mentions Case A / Case B prompts, surfaces.planned.json, or a reconciliation plan. Covers the full loop: repo reality bundle out to hosted Claude Design, planned manifests back in, reconciliation plan generated.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-guide-extractors",
+      "kind": "agent-skill",
+      "name": "pmap-guide-extractors",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-guide-extractors/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-guide-extractors/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"write a local extractor\", \"add extract.local.mjs\", \"fix missing capabilities in product-map\", \"product-map is missing our commands/tools/routes\", \"add curated binds\", \"configure product-map.config.mjs\", or when pmap output misses or fabricates items because the repo's truth lives in code registries instead of filesystem conventions.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-guide-overview",
+      "kind": "agent-skill",
+      "name": "pmap-guide-overview",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-guide-overview/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-guide-overview/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user or task mentions \"product-map\", \"pmap\", \"surfaces manifest\", \"capabilities manifest\", \"surfaces.existing.json\", \"check-fresh\", \"product surface\", \"design drift\", or work under docs/reference/product-map/. Explains what product-map is, how to install and run the pmap CLI, the file layout, and the rules (write boundary, determinism, freshness) every agent must respect.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-ingest",
+      "kind": "agent-skill",
+      "name": "pmap-ingest",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-ingest/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-ingest/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"ingest the design\", \"ingest planned manifests\", \"process the Claude Design export\", \"run the reconcile\", or provides surfaces.planned.json / capabilities.planned.json files returned from a Claude Design project.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-refresh",
+      "kind": "agent-skill",
+      "name": "pmap-refresh",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-refresh/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-refresh/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"refresh product-map\", \"regenerate the product map\", \"regenerate manifests\", \"rebuild the launch bundle\", or after a git pull when product-map data may be stale.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-review",
+      "kind": "agent-skill",
+      "name": "pmap-review",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-review/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-review/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"review the product map\", \"audit product-map output\", \"does the product map capture everything\", \"check product-map fidelity\", or suspects manifests miss or fabricate what the repo actually ships.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-setup",
+      "kind": "agent-skill",
+      "name": "pmap-setup",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-setup/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-setup/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"set up product-map\", \"adopt product-map\", \"install pmap in this repo\", or \"add product-map to this repo\". One-time adoption: install the public package, vendor prompts/schemas, and perform the first extraction.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:agent-skill:product-map.pmap-validate",
+      "kind": "agent-skill",
+      "name": "pmap-validate",
+      "placement": {
+        "current": "plugins/product-map",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "plugins/product-map/skills/pmap-validate/SKILL.md"
+        ],
+        "source": "plugins/product-map/skills/pmap-validate/SKILL.md"
+      },
+      "purpose": "This skill should be used when the user asks to \"validate product-map\", \"check product-map freshness\", \"is the product map stale\", or wants the read-only CI-style gate for manifests.",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "agent"
+    },
+    {
+      "id": "cap:command:pmap.all",
+      "kind": "command",
+      "name": "pmap all",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "extract + map + diff + render in one pass",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.bundle",
+      "kind": "command",
+      "name": "pmap bundle",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Assemble the repo-reality bundle and design prompt for a Claude Design project",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.check-fresh",
+      "kind": "command",
+      "name": "pmap check-fresh",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Regenerate in memory and byte-compare against disk (read-only, exit 1 on drift)",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.diff",
+      "kind": "command",
+      "name": "pmap diff",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Derive diffs/ (requires planned manifests)",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.digest",
+      "kind": "command",
+      "name": "pmap digest",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Print a dense, token-budgeted, path-first summary for an agent entering the repo",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.doctor",
+      "kind": "command",
+      "name": "pmap doctor",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Report which adapters ran, what was skipped, and what looks suspiciously thin",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.explain",
+      "kind": "command",
+      "name": "pmap explain",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Explain one item: which adapter emitted it, from what evidence, at what confidence",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.extract",
+      "kind": "command",
+      "name": "pmap extract",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Extract surfaces.existing.json + capabilities.existing.json from the repo",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.fleet",
+      "kind": "command",
+      "name": "pmap fleet",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Roll up several repos into fleet.json + fleet.generated.md in --out (--scan extracts live)",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.ingest",
+      "kind": "command",
+      "name": "pmap ingest",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Finalize + validate raw planned manifests (e.g. pasted Claude Design JSON) and write them canonically",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.init",
+      "kind": "command",
+      "name": "pmap init",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Vendor the prompt templates + JSON Schemas into the repo's product-map directory",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.map",
+      "kind": "command",
+      "name": "pmap map",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Derive maps/ from the manifests on disk",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.render",
+      "kind": "command",
+      "name": "pmap render",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Render generated/*.generated.md from the JSON manifests",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.show",
+      "kind": "command",
+      "name": "pmap show",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Print what this repo ships as a terminal table (no committed manifests needed)",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:pmap.validate",
+      "kind": "command",
+      "name": "pmap validate",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/src/registry.ts",
+          "packages/pmap/src/cli.ts"
+        ],
+        "source": "packages/engine/src/registry.ts"
+      },
+      "purpose": "Validate every manifest under docs/reference/product-map/ (read-only)",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:derive",
+      "kind": "package",
+      "name": "@product-map/derive",
+      "placement": {
+        "current": "packages/derive",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/derive/package.json"
+        ],
+        "source": "packages/derive/package.json"
+      },
+      "purpose": "Pure derivation of maps, diffs, and fleet roll-ups",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:discovery",
+      "kind": "package",
+      "name": "@product-map/discovery",
+      "placement": {
+        "current": "packages/discovery",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/discovery/package.json"
+        ],
+        "source": "packages/discovery/package.json"
+      },
+      "purpose": "Repository crawl, package graph, and git context",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:emit",
+      "kind": "package",
+      "name": "@product-map/emit",
+      "placement": {
+        "current": "packages/emit",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/emit/package.json"
+        ],
+        "source": "packages/emit/package.json"
+      },
+      "purpose": "Pure projections of manifests to human- and agent-readable text",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:engine",
+      "kind": "package",
+      "name": "@product-map/engine",
+      "placement": {
+        "current": "packages/engine",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/engine/package.json"
+        ],
+        "source": "packages/engine/package.json"
+      },
+      "purpose": "Command orchestration, the manifest slot registry, and the transactional writer",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:extract",
+      "kind": "package",
+      "name": "@product-map/extract",
+      "placement": {
+        "current": "packages/extract",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/extract/package.json"
+        ],
+        "source": "packages/extract/package.json"
+      },
+      "purpose": "Adapter contract, filesystem-convention adapters, deduplication, and the repository-local extractor protocol",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1
+      },
+      "id": "cap:package:product-map",
+      "kind": "package",
+      "name": "product-map",
+      "placement": {
+        "current": "packages/pmap",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/pmap/package.json"
+        ],
+        "source": "packages/pmap/package.json"
+      },
+      "purpose": "pmap — extract, validate, map, diff, render, and freshness-check product-map.v1 manifests",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 1,
+        "pmap.private": true
+      },
+      "id": "cap:package:runtime",
+      "kind": "package",
+      "name": "@product-map/runtime",
+      "placement": {
+        "current": "packages/runtime",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/runtime/package.json"
+        ],
+        "source": "packages/runtime/package.json"
+      },
+      "purpose": "Domain-free runtime primitives: logging, filesystem, caching, bounded concurrency, subprocesses",
+      "reach": "internal",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "ext": {
+        "pmap.exportSubpaths": 2
+      },
+      "id": "cap:package:spec",
+      "kind": "package",
+      "name": "@product-map/spec",
+      "placement": {
+        "current": "packages/spec",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/spec/package.json"
+        ],
+        "source": "packages/spec/package.json"
+      },
+      "purpose": "product-map.v1 manifest schemas, canonical JSON serialization, and content hashing",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    }
+  ],
+  "kind": "capability",
+  "schemaVersion": "product-map.v1",
+  "scope": "product-map",
+  "stance": "existing"
+}

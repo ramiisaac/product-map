@@ -1,0 +1,31 @@
+name: Bug report
+description: Something in the CLI, spec, or plugin behaves incorrectly.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: pmap version
+      description: Output of `pmap --version`.
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node version
+      description: Output of `node --version`. The supported floor is 22.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: The exact command you ran and what it printed. Redact paths if you need to.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

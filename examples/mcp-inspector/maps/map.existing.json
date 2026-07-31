@@ -1,0 +1,60 @@
+{
+  "contentHash": "577cae2b2b0f74e440708f4ed2edfe8246d67e3914579b641387a02956a82af5",
+  "generatedFrom": {
+    "commit": "ac3c1a122a5e072a200c99869fc0cd8bfa660ece",
+    "derivedFrom": [
+      "994bbfcda5d4715993e883256f29944ee3930978e2607aae880e06681f5a749d",
+      "51da5a4f625f8a2f6bba37741f2f977196849d9b3cc34e06c5e32c590c520c6d"
+    ],
+    "sources": [
+      "surfaces.existing.json",
+      "capabilities.existing.json"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "note": "No declared capability bindings; candidates are proposals only.",
+      "relationship": "surface-unbound",
+      "surfaceId": "surface:cli:mcp-inspector"
+    },
+    {
+      "capabilityId": "cap:package:inspector-cli",
+      "note": "bin declared by this package",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:mcp-inspector-cli"
+    },
+    {
+      "capabilityId": "cap:package:inspector-client",
+      "note": "bin declared by this package",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:mcp-inspector-client"
+    },
+    {
+      "capabilityId": "cap:package:inspector-server",
+      "note": "bin declared by this package",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:mcp-inspector-server"
+    },
+    {
+      "candidates": [
+        {
+          "id": "cap:package:inspector-server",
+          "reason": "token similarity (not a binding)",
+          "score": 0.6
+        }
+      ],
+      "note": "No declared capability bindings; candidates are proposals only.",
+      "relationship": "surface-unbound",
+      "surfaceId": "surface:mcp:inspector-server"
+    }
+  ],
+  "kind": "map",
+  "schemaVersion": "product-map.v1",
+  "scope": "mcp-inspector",
+  "stance": "derived"
+}

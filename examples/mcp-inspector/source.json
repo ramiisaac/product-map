@@ -1,0 +1,6 @@
+{
+  "name": "mcp-inspector",
+  "repository": "https://github.com/modelcontextprotocol/inspector.git",
+  "commit": "ac3c1a122a5e072a200c99869fc0cd8bfa660ece",
+  "license": "MIT"
+}

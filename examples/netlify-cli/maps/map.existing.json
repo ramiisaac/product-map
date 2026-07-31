@@ -1,0 +1,203 @@
+{
+  "contentHash": "5bd4de2e3d6e67d10c6637766d158f73e71d952d5c33a3e4225dbd0dbf342aff",
+  "generatedFrom": {
+    "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
+    "derivedFrom": [
+      "76dd5abdacbd07a9167f6c39520b950275a8a59f4d4d66b8ef3f492a61eab0b0",
+      "9ab8203977bc2525ea7e5816e0f8af051b49a37f55b1b1d614467a10a354e1f9"
+    ],
+    "sources": [
+      "surfaces.existing.json",
+      "capabilities.existing.json"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "capabilityId": "cap:package:cli-docs-site",
+      "note": "Not referenced by any surface binding.",
+      "relationship": "capability-unbound"
+    },
+    {
+      "capabilityId": "cap:command:netlify.agents",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.api",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.blobs",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.build",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.claim",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.clone",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.completion",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.create",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.database",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.deploy",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.dev",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.dev-exec",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.env",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.functions",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.init",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.link",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.login",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.logout",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.logs",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.open",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.recipes",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.serve",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.sites",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.status",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.switch",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.teams",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.unlink",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "capabilityId": "cap:command:netlify.watch",
+      "note": "command module in src/commands",
+      "relationship": "bound",
+      "surfaceId": "surface:cli:netlify"
+    },
+    {
+      "note": "No declared capability bindings; candidates are proposals only.",
+      "relationship": "surface-unbound",
+      "surfaceId": "surface:cli:ntl"
+    }
+  ],
+  "kind": "map",
+  "schemaVersion": "product-map.v1",
+  "scope": "netlify-cli",
+  "stance": "derived"
+}

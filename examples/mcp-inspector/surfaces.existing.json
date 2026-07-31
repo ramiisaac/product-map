@@ -1,0 +1,175 @@
+{
+  "contentHash": "994bbfcda5d4715993e883256f29944ee3930978e2607aae880e06681f5a749d",
+  "generatedFrom": {
+    "commit": "ac3c1a122a5e072a200c99869fc0cd8bfa660ece",
+    "sources": [
+      "cli/package.json",
+      "client/package.json",
+      "package.json",
+      "server/package.json"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [],
+      "entry": {
+        "kind": "bin",
+        "value": "mcp-inspector"
+      },
+      "id": "surface:cli:mcp-inspector",
+      "name": "mcp-inspector CLI",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "package.json",
+          "cli/build/cli.js"
+        ],
+        "source": "package.json"
+      },
+      "purpose": "Command-line entrypoint `mcp-inspector` from @modelcontextprotocol/inspector.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:package:inspector-cli",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "mcp-inspector-cli"
+      },
+      "id": "surface:cli:mcp-inspector-cli",
+      "name": "mcp-inspector-cli CLI",
+      "placement": {
+        "current": "cli",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "cli/package.json",
+          "cli/build/cli.js"
+        ],
+        "source": "cli/package.json"
+      },
+      "purpose": "Command-line entrypoint `mcp-inspector-cli` from @modelcontextprotocol/inspector-cli.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:package:inspector-client",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "mcp-inspector-client"
+      },
+      "id": "surface:cli:mcp-inspector-client",
+      "name": "mcp-inspector-client CLI",
+      "placement": {
+        "current": "client",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "client/package.json",
+          "client/./bin/start.js"
+        ],
+        "source": "client/package.json"
+      },
+      "purpose": "Command-line entrypoint `mcp-inspector-client` from @modelcontextprotocol/inspector-client.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:package:inspector-server",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "mcp-inspector-server"
+      },
+      "id": "surface:cli:mcp-inspector-server",
+      "name": "mcp-inspector-server CLI",
+      "placement": {
+        "current": "server",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "server/package.json",
+          "server/build/index.js"
+        ],
+        "source": "server/package.json"
+      },
+      "purpose": "Command-line entrypoint `mcp-inspector-server` from @modelcontextprotocol/inspector-server.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "agent"
+      ],
+      "binds": [],
+      "entry": {
+        "kind": "mcp-tool",
+        "value": "@modelcontextprotocol/inspector-server"
+      },
+      "id": "surface:mcp:inspector-server",
+      "name": "@modelcontextprotocol/inspector-server MCP server",
+      "placement": {
+        "current": "server",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "server/package.json"
+        ],
+        "source": "server/package.json"
+      },
+      "purpose": "MCP server implemented in server.",
+      "status": "live",
+      "surfaceType": "mcp"
+    }
+  ],
+  "kind": "surface",
+  "schemaVersion": "product-map.v1",
+  "scope": "mcp-inspector",
+  "stance": "existing"
+}

@@ -1,0 +1,293 @@
+{
+  "contentHash": "bd71ae420a63ee23a87f29ff8b734095ec5b4db3bf6b6d056b8d3e7c35740749",
+  "generatedFrom": {
+    "commit": "4baadbc6517070ae8f8feb2c97037adc2b305544",
+    "sources": [
+      "apps/v4/app",
+      "packages/helpers/package.json",
+      "packages/react/package.json",
+      "packages/shadcn/package.json",
+      "packages/shadcn/src/commands"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:command:shadcn.add",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.apply",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.build",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.diff",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.docs",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.eject",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.info",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.init",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.mcp",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.migrate",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.preset",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.search",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:command:shadcn.view",
+          "note": "command module in packages/shadcn/src/commands",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:package:shadcn",
+          "note": "bin declared by this package",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "bin",
+        "value": "shadcn"
+      },
+      "id": "surface:cli:shadcn",
+      "name": "shadcn CLI",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/shadcn/package.json",
+          "packages/shadcn/src/commands"
+        ],
+        "source": "packages/shadcn/package.json"
+      },
+      "purpose": "Command-line entrypoint `shadcn` from shadcn.",
+      "status": "live",
+      "surfaceType": "cli"
+    },
+    {
+      "audience": [
+        "developer"
+      ],
+      "binds": [
+        {
+          "capabilityId": "cap:route:v4-api-search",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-init",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-init-md",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-init-v0",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-llm-slug-catchall",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-r-registries.json",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-rss.xml",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        },
+        {
+          "capabilityId": "cap:route:v4-typeset.css",
+          "note": "route handler inside this app",
+          "via": "inferred-high"
+        }
+      ],
+      "entry": {
+        "kind": "route",
+        "value": "/"
+      },
+      "id": "surface:dashboard:v4",
+      "name": "v4",
+      "placement": {
+        "current": "apps/v4",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "apps/v4/app"
+        ],
+        "source": "apps/v4/app"
+      },
+      "purpose": "Next.js app at apps/v4 (19 page routes).",
+      "status": "live",
+      "surfaceType": "dashboard",
+      "views": [
+        {
+          "id": "home",
+          "name": "/"
+        },
+        {
+          "id": "blocks",
+          "name": "/blocks"
+        },
+        {
+          "id": "blocks-...categories",
+          "name": "/blocks/[...categories]"
+        },
+        {
+          "id": "charts-type",
+          "name": "/charts/[type]"
+        },
+        {
+          "id": "colors",
+          "name": "/colors"
+        },
+        {
+          "id": "create",
+          "name": "/create"
+        },
+        {
+          "id": "docs-...slug",
+          "name": "/docs/[[...slug]]"
+        },
+        {
+          "id": "docs-changelog",
+          "name": "/docs/changelog"
+        },
+        {
+          "id": "examples-base-name",
+          "name": "/examples/[base]/[name]"
+        },
+        {
+          "id": "examples-authentication",
+          "name": "/examples/authentication"
+        },
+        {
+          "id": "examples-dashboard",
+          "name": "/examples/dashboard"
+        },
+        {
+          "id": "examples-playground",
+          "name": "/examples/playground"
+        },
+        {
+          "id": "examples-rtl",
+          "name": "/examples/rtl"
+        },
+        {
+          "id": "examples-tasks",
+          "name": "/examples/tasks"
+        },
+        {
+          "id": "preview-base-name",
+          "name": "/preview/[base]/[name]"
+        },
+        {
+          "id": "preview-typeset-name",
+          "name": "/preview/typeset/[name]"
+        },
+        {
+          "id": "sera",
+          "name": "/sera"
+        },
+        {
+          "id": "typeset",
+          "name": "/typeset"
+        },
+        {
+          "id": "view-style-name",
+          "name": "/view/[style]/[name]"
+        }
+      ]
+    },
+    {
+      "audience": [
+        "agent"
+      ],
+      "binds": [],
+      "entry": {
+        "kind": "mcp-tool",
+        "value": "shadcn"
+      },
+      "id": "surface:mcp:shadcn",
+      "name": "shadcn MCP server",
+      "placement": {
+        "current": "packages/shadcn",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "packages/shadcn/package.json"
+        ],
+        "source": "packages/shadcn/package.json"
+      },
+      "purpose": "MCP server implemented in packages/shadcn.",
+      "status": "live",
+      "surfaceType": "mcp"
+    }
+  ],
+  "kind": "surface",
+  "schemaVersion": "product-map.v1",
+  "scope": "shadcn-ui",
+  "stance": "existing"
+}

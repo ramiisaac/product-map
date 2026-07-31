@@ -1,0 +1,15 @@
+{
+  "name": "ramiisaac",
+  "owner": {
+    "name": "ramiisaac"
+  },
+  "plugins": [
+    {
+      "name": "product-map",
+      "source": "./plugins/product-map",
+      "description": "Teach repo agents to drive product-map: inspect what any repo ships, install pmap, keep manifests fresh, author local extractors, and run the Claude Design handoff loop.",
+      "category": "workflow",
+      "keywords": ["product-map", "pmap", "surfaces", "capabilities", "design-handoff"]
+    }
+  ]
+}

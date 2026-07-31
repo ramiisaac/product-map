@@ -1,0 +1,43 @@
+name: product-map freshness
+description: Fail the build when a repository's committed product map no longer matches what pmap extracts from the code.
+author: ramiisaac
+
+branding:
+  icon: git-branch
+  color: purple
+
+inputs:
+  version:
+    description: Version of the product-map package to run. The release process keeps the default in lockstep with this repository's releases, so the gate only changes when a release ships; override to run a different version.
+    required: false
+    default: latest
+  repo:
+    description: Repository root to check, relative to the workspace.
+    required: false
+    default: .
+  command:
+    description: pmap command to run. check-fresh gates drift; validate only checks the manifests parse.
+    required: false
+    default: check-fresh
+  allow-repo-code:
+    description: Whether to run the repository's own product-map.config.mjs and extract.local.mjs.
+    required: false
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    - name: Run pmap
+      shell: bash
+      env:
+        PMAP_VERSION: ${{ inputs.version }}
+        PMAP_REPO: ${{ inputs.repo }}
+        PMAP_COMMAND: ${{ inputs.command }}
+        PMAP_ALLOW_REPO_CODE: ${{ inputs.allow-repo-code }}
+      run: |
+        set -euo pipefail
+        flags=()
+        if [ "$PMAP_ALLOW_REPO_CODE" != "true" ]; then
+          flags+=(--no-repo-code)
+        fi
+        npx --yes "product-map@${PMAP_VERSION}" "$PMAP_COMMAND" --repo "$PMAP_REPO" "${flags[@]}"

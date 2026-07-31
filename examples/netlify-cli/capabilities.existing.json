@@ -1,0 +1,577 @@
+{
+  "contentHash": "9ab8203977bc2525ea7e5816e0f8af051b49a37f55b1b1d614467a10a354e1f9",
+  "generatedFrom": {
+    "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
+    "sources": [
+      "package.json",
+      "site/package.json",
+      "src/commands"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "id": "cap:command:netlify.agents",
+      "kind": "command",
+      "name": "netlify agents",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/agents/agents.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.api",
+      "kind": "command",
+      "name": "netlify api",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/api/api.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.blobs",
+      "kind": "command",
+      "name": "netlify blobs",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/blobs/blobs.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.build",
+      "kind": "command",
+      "name": "netlify build",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/build/build.ts",
+          "src/commands/logs/build.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.claim",
+      "kind": "command",
+      "name": "netlify claim",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/claim/claim.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.clone",
+      "kind": "command",
+      "name": "netlify clone",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/clone/clone.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.completion",
+      "kind": "command",
+      "name": "netlify completion",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/completion/completion.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.create",
+      "kind": "command",
+      "name": "netlify create",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/create/create.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.database",
+      "kind": "command",
+      "name": "netlify database",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/database/database.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.deploy",
+      "kind": "command",
+      "name": "netlify deploy",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/deploy/deploy.ts",
+          "src/commands/logs/sources/deploy.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.dev",
+      "kind": "command",
+      "name": "netlify dev",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/dev/dev.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.dev-exec",
+      "kind": "command",
+      "name": "netlify dev-exec",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/dev-exec/dev-exec.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.env",
+      "kind": "command",
+      "name": "netlify env",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/env/env.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.functions",
+      "kind": "command",
+      "name": "netlify functions",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/functions/functions.ts",
+          "src/commands/logs/sources/functions.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.init",
+      "kind": "command",
+      "name": "netlify init",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/init/init.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.link",
+      "kind": "command",
+      "name": "netlify link",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/link/link.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.login",
+      "kind": "command",
+      "name": "netlify login",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/login/login.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.logout",
+      "kind": "command",
+      "name": "netlify logout",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/logout/logout.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.logs",
+      "kind": "command",
+      "name": "netlify logs",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/logs/logs.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.open",
+      "kind": "command",
+      "name": "netlify open",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/open/open.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.recipes",
+      "kind": "command",
+      "name": "netlify recipes",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/recipes/recipes.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.serve",
+      "kind": "command",
+      "name": "netlify serve",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/serve/serve.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.sites",
+      "kind": "command",
+      "name": "netlify sites",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/sites/sites.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.status",
+      "kind": "command",
+      "name": "netlify status",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/status/status.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.switch",
+      "kind": "command",
+      "name": "netlify switch",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/switch/switch.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.teams",
+      "kind": "command",
+      "name": "netlify teams",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/teams/teams.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.unlink",
+      "kind": "command",
+      "name": "netlify unlink",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/unlink/unlink.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:command:netlify.watch",
+      "kind": "command",
+      "name": "netlify watch",
+      "placement": {
+        "current": ".",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "medium",
+        "evidence": [
+          "src/commands/watch/watch.ts"
+        ],
+        "source": "src/commands"
+      },
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "cli"
+    },
+    {
+      "id": "cap:package:cli-docs-site",
+      "kind": "package",
+      "name": "cli-docs-site",
+      "placement": {
+        "current": "site",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "site/package.json"
+        ],
+        "source": "site/package.json"
+      },
+      "purpose": "Docs site for Netlify CLI",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    }
+  ],
+  "kind": "capability",
+  "schemaVersion": "product-map.v1",
+  "scope": "netlify-cli",
+  "stance": "existing"
+}

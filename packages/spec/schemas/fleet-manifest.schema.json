@@ -1,0 +1,223 @@
+{
+  "$id": "https://product-map.dev/schemas/product-map.v1/fleet-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "contentHash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "ext": {
+      "additionalProperties": {},
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "generatedFrom": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "anyOf": [
+            {
+              "minLength": 7,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "derivedFrom": {
+          "items": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "workingTree": {
+          "enum": [
+            "clean",
+            "dirty",
+            "not-applicable"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "commit",
+        "workingTree",
+        "sources"
+      ],
+      "type": "object"
+    },
+    "generator": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "capabilitiesByKind": {
+            "additionalProperties": {
+              "maximum": 9007199254740991,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "propertyNames": {
+              "description": "product-map.v1 capabilityKind; known values: route, query, mutation, action, command, event, stream, entity, schema, service, package, config, extension-api, email-contract, lsp-method, diagnostic, webhook, job, queue-job, mcp-tool, check, rule, reporter, plugin-api, report, artifact, agent-skill, agent-subagent, other",
+              "pattern": "^[a-z0-9][a-z0-9-]*$",
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "capabilityCount": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "commit": {
+            "anyOf": [
+              {
+                "minLength": 7,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ext": {
+            "additionalProperties": {},
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "hasPlanned": {
+            "type": "boolean"
+          },
+          "id": {
+            "pattern": "^repo:[a-z0-9][a-z0-9.-]*$",
+            "type": "string"
+          },
+          "misplacedCount": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "note": {
+            "type": "string"
+          },
+          "path": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "repo": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "state": {
+            "description": "product-map.v1 fleetState; known values: mapped, scanned, not-mapped, invalid",
+            "pattern": "^[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "surfaceCount": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "surfacesByType": {
+            "additionalProperties": {
+              "maximum": 9007199254740991,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "propertyNames": {
+              "description": "product-map.v1 surfaceType; known values: marketing, docs, dashboard, admin, playground, explorer, report, vscode, jetbrains, zed, lsp, cli, tui, email, notification, github-action, github-app, mcp, api-docs, sdk-docs, registry, build-plugin, lint-plugin, desktop, macos, browser-extension, agent-plugin, other",
+              "pattern": "^[a-z0-9][a-z0-9-]*$",
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "workingTree": {
+            "enum": [
+              "clean",
+              "dirty",
+              "not-applicable"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "repo",
+          "path",
+          "commit",
+          "workingTree",
+          "state",
+          "surfaceCount",
+          "capabilityCount",
+          "surfacesByType",
+          "capabilitiesByKind",
+          "misplacedCount",
+          "hasPlanned"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "kind": {
+      "const": "fleet",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "product-map.v1",
+      "type": "string"
+    },
+    "scope": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "stance": {
+      "enum": [
+        "existing",
+        "planned",
+        "derived"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "kind",
+    "stance",
+    "scope",
+    "generatedFrom",
+    "generator",
+    "contentHash",
+    "items"
+  ],
+  "type": "object"
+}

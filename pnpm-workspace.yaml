@@ -1,0 +1,9 @@
+packages:
+  - "packages/*"
+  - "config/*"
+
+allowBuilds:
+  esbuild: true
+  msw: false
+  sharp: true
+  unrs-resolver: true

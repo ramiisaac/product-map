@@ -1,0 +1,83 @@
+{
+  "contentHash": "51da5a4f625f8a2f6bba37741f2f977196849d9b3cc34e06c5e32c590c520c6d",
+  "generatedFrom": {
+    "commit": "ac3c1a122a5e072a200c99869fc0cd8bfa660ece",
+    "sources": [
+      "cli/package.json",
+      "client/package.json",
+      "package.json",
+      "server/package.json"
+    ],
+    "workingTree": "clean"
+  },
+  "generator": {
+    "name": "pmap",
+    "version": "0.0.0"
+  },
+  "items": [
+    {
+      "id": "cap:package:inspector-cli",
+      "kind": "package",
+      "name": "@modelcontextprotocol/inspector-cli",
+      "placement": {
+        "current": "cli",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "cli/package.json"
+        ],
+        "source": "cli/package.json"
+      },
+      "purpose": "CLI for the Model Context Protocol inspector",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "id": "cap:package:inspector-client",
+      "kind": "package",
+      "name": "@modelcontextprotocol/inspector-client",
+      "placement": {
+        "current": "client",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "client/package.json"
+        ],
+        "source": "client/package.json"
+      },
+      "purpose": "Client-side application for the Model Context Protocol inspector",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    },
+    {
+      "id": "cap:package:inspector-server",
+      "kind": "package",
+      "name": "@modelcontextprotocol/inspector-server",
+      "placement": {
+        "current": "server",
+        "verdict": "correct"
+      },
+      "provenance": {
+        "confidence": "high",
+        "evidence": [
+          "server/package.json"
+        ],
+        "source": "server/package.json"
+      },
+      "purpose": "Server-side application for the Model Context Protocol inspector",
+      "reach": "external",
+      "status": "live",
+      "surfaceArea": "sdk"
+    }
+  ],
+  "kind": "capability",
+  "schemaVersion": "product-map.v1",
+  "scope": "mcp-inspector",
+  "stance": "existing"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "@product-map/spec",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "product-map.v1 manifest schemas, canonical JSON serialization, and content hashing",
+  "license": "MIT",
+  "author": "ramiisaac",
+  "homepage": "https://github.com/ramiisaac/product-map#readme",
+  "bugs": "https://github.com/ramiisaac/product-map/issues",
+  "keywords": [
+    "product-map",
+    "schema",
+    "zod",
+    "canonical-json",
+    "content-hash"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiisaac/product-map.git",
+    "directory": "packages/spec"
+  },
+  "files": [
+    "dist",
+    "schemas"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org",
+    "provenance": true,
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings=0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@config/eslint": "workspace:*",
+    "@config/typescript": "workspace:*",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.1",
+    "typescript": "~7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
