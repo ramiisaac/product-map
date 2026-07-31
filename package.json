@@ -17,7 +17,7 @@
     "examples:check": "node scripts/examples/check.mjs",
     "test:packages": "node scripts/smoke-packages.mjs",
     "changeset": "changeset",
-    "version-packages": "changeset version && node plugins/product-map/scripts/sync-version.mjs && node integrations/github-action/scripts/sync-version.mjs && node scripts/generate.mjs",
+    "version-packages": "changeset version && node plugins/product-map/scripts/sync-version.mjs && node integrations/github-action/scripts/sync-version.mjs && node scripts/generate.mjs && prettier --write --ignore-unknown .",
     "release": "turbo build --filter=product-map --filter=@product-map/spec && changeset publish",
     "prepare": "lefthook install"
   },

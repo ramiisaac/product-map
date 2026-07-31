@@ -10,7 +10,7 @@ jobs:
   freshness:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: ramiisaac/product-map/integrations/github-action@main
 ```
 
