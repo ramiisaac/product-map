@@ -2,7 +2,7 @@
 
 # shadcn-ui — capabilities (existing)
 
-Stance: **existing** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.0 · Items: 24
+Stance: **existing** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.1 · Items: 24
 
 ## At a glance
 

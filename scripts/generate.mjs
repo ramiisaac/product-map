@@ -119,5 +119,18 @@ for (const step of managedSteps) {
 console.log(`generate: ${written.length} files written across ${STEPS.length} steps`);
 
 if (values.stage && written.length > 0) {
-  execFileSync("git", ["-C", repoRoot, "add", "--", ...written], { stdio: "inherit" });
+  // AGENTS.md regenerates locally but is gitignored (maintainer-machine
+  // guidance); `git add` refuses ignored paths, so staging filters them out
+  // instead of crashing the pre-commit hook.
+  const stageable = written.filter((path) => {
+    try {
+      execFileSync("git", ["-C", repoRoot, "check-ignore", "--quiet", "--", path]);
+      return false;
+    } catch {
+      return true;
+    }
+  });
+  if (stageable.length > 0) {
+    execFileSync("git", ["-C", repoRoot, "add", "--", ...stageable], { stdio: "inherit" });
+  }
 }

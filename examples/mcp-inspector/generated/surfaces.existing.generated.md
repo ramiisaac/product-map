@@ -2,7 +2,7 @@
 
 # mcp-inspector — product surfaces (existing)
 
-Stance: **existing** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.0 · Items: 5
+Stance: **existing** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.1 · Items: 5
 
 ## At a glance
 

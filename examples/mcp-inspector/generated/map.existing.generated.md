@@ -2,7 +2,7 @@
 
 # mcp-inspector — surface ↔ capability map
 
-Stance: **derived** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.0 · Items: 5
+Stance: **derived** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.1 · Items: 5
 
 ## Relationship counts
 

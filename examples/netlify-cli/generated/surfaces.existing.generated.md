@@ -2,7 +2,7 @@
 
 # netlify-cli — product surfaces (existing)
 
-Stance: **existing** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.0 · Items: 2
+Stance: **existing** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.1 · Items: 2
 
 ## At a glance
 

@@ -13,7 +13,7 @@ Point it at [shadcn-ui/ui](https://github.com/shadcn-ui/ui) and `pmap digest` pr
 <!-- generated:example-digest — injected from examples/shadcn-ui/generated/digest.generated.md; do not edit -->
 
 ```text
-# shadcn-ui — product map (pmap 0.1.0 @ 4baadbc6, clean)
+# shadcn-ui — product map (pmap 0.1.1 @ 4baadbc6, clean)
 3 surfaces · 24 capabilities · 22 bound · 2 capability-unbound · 1 surface-unbound
 
 SURFACES
@@ -41,7 +41,7 @@ GAPS
 ```text
 # shadcn-ui — product map
 
-Extracted at commit `4baadbc65170` (clean tree) by pmap@0.1.0.
+Extracted at commit `4baadbc65170` (clean tree) by pmap@0.1.1.
 
 - **3 surfaces** across 3 types — inventory
 - **24 capabilities** across 3 kinds — inventory

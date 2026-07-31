@@ -1,4 +1,4 @@
-# mcp-inspector — product map (pmap 0.1.0 @ ac3c1a12, clean)
+# mcp-inspector — product map (pmap 0.1.1 @ ac3c1a12, clean)
 5 surfaces · 3 capabilities · 3 bound · 2 surface-unbound
 
 SURFACES

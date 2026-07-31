@@ -2,7 +2,7 @@
 
 # netlify-cli — gaps and follow-ups
 
-Stance: **derived** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.0 · Items: 30
+Stance: **derived** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.1 · Items: 30
 
 ## 1. Misplaced — move these to their canonical package
 

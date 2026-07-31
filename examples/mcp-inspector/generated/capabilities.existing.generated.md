@@ -2,7 +2,7 @@
 
 # mcp-inspector — capabilities (existing)
 
-Stance: **existing** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.0 · Items: 3
+Stance: **existing** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.1 · Items: 3
 
 ## At a glance
 

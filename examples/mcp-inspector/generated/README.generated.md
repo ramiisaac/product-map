@@ -2,7 +2,7 @@
 
 # mcp-inspector — product map
 
-Extracted at commit `ac3c1a122a5e` (clean tree) by pmap@0.1.0.
+Extracted at commit `ac3c1a122a5e` (clean tree) by pmap@0.1.1.
 
 - **5 surfaces** across 2 types — [inventory](./surfaces.existing.generated.md)
 - **3 capabilities** across 1 kinds — [inventory](./capabilities.existing.generated.md)

@@ -1,4 +1,4 @@
-# shadcn-ui — product map (pmap 0.1.0 @ 4baadbc6, clean)
+# shadcn-ui — product map (pmap 0.1.1 @ 4baadbc6, clean)
 3 surfaces · 24 capabilities · 22 bound · 2 capability-unbound · 1 surface-unbound
 
 SURFACES
