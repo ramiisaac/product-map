@@ -2,7 +2,7 @@
 
 # mcp-inspector — gaps and follow-ups
 
-Stance: **derived** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.0.0 · Items: 5
+Stance: **derived** · Commit: `ac3c1a122a5e` (clean) · Generator: pmap@0.1.0 · Items: 5
 
 ## 1. Misplaced — move these to their canonical package
 

@@ -1,5 +1,7 @@
 # product-map
 
+[![npm](https://img.shields.io/npm/v/product-map)](https://www.npmjs.com/package/product-map) [![spec](https://img.shields.io/npm/v/%40product-map%2Fspec?label=%40product-map%2Fspec)](https://www.npmjs.com/package/@product-map/spec) [![CI](https://github.com/ramiisaac/product-map/actions/workflows/ci.yml/badge.svg)](https://github.com/ramiisaac/product-map/actions/workflows/ci.yml)
+
 Deterministic product-surface and capability mapping for software repositories. `pmap` extracts what a repository exposes today, accepts planned manifests from a design process, and derives maps, diffs, Markdown summaries, and reconciliation guidance without inventing relationships.
 
 The model is `(surface | capability) × (existing | planned | derived)`. Canonical JSON manifests live under `docs/reference/product-map/`, carry content hashes, and can be byte-checked for freshness in CI.
@@ -11,7 +13,7 @@ Point it at [shadcn-ui/ui](https://github.com/shadcn-ui/ui) and `pmap digest` pr
 <!-- generated:example-digest — injected from examples/shadcn-ui/generated/digest.generated.md; do not edit -->
 
 ```text
-# shadcn-ui — product map (pmap 0.0.0 @ 4baadbc6, clean)
+# shadcn-ui — product map (pmap 0.1.0 @ 4baadbc6, clean)
 3 surfaces · 24 capabilities · 22 bound · 2 capability-unbound · 1 surface-unbound
 
 SURFACES
@@ -39,7 +41,7 @@ GAPS
 ```text
 # shadcn-ui — product map
 
-Extracted at commit `4baadbc65170` (clean tree) by pmap@0.0.0.
+Extracted at commit `4baadbc65170` (clean tree) by pmap@0.1.0.
 
 - **3 surfaces** across 3 types — inventory
 - **24 capabilities** across 3 kinds — inventory

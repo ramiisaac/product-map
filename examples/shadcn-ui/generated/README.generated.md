@@ -2,7 +2,7 @@
 
 # shadcn-ui — product map
 
-Extracted at commit `4baadbc65170` (clean tree) by pmap@0.0.0.
+Extracted at commit `4baadbc65170` (clean tree) by pmap@0.1.0.
 
 - **3 surfaces** across 3 types — [inventory](./surfaces.existing.generated.md)
 - **24 capabilities** across 3 kinds — [inventory](./capabilities.existing.generated.md)

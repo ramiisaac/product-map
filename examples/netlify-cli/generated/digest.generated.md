@@ -1,4 +1,4 @@
-# netlify-cli — product map (pmap 0.0.0 @ f214e69e, clean)
+# netlify-cli — product map (pmap 0.1.0 @ f214e69e, clean)
 2 surfaces · 29 capabilities · 28 bound · 1 capability-unbound · 1 surface-unbound
 
 SURFACES

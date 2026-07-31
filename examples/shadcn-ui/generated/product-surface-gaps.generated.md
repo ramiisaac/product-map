@@ -2,7 +2,7 @@
 
 # shadcn-ui — gaps and follow-ups
 
-Stance: **derived** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.0.0 · Items: 25
+Stance: **derived** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.0 · Items: 25
 
 ## 1. Misplaced — move these to their canonical package
 

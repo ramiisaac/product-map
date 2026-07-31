@@ -2,7 +2,7 @@
 
 # netlify-cli — surface ↔ capability map
 
-Stance: **derived** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.0.0 · Items: 30
+Stance: **derived** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.0 · Items: 30
 
 ## Relationship counts
 

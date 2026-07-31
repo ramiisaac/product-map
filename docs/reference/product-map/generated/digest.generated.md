@@ -1,4 +1,4 @@
-# product-map — product map (pmap 0.1.0 @ 4f27e94d, dirty)
+# product-map — product map (pmap 0.1.0 @ d264fe31, dirty)
 5 surfaces · 31 capabilities · 27 bound · 7 capability-unbound · 1 surface-unbound
 
 SURFACES

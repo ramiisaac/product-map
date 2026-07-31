@@ -2,7 +2,7 @@
 
 # shadcn-ui — product surfaces (existing)
 
-Stance: **existing** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.0.0 · Items: 3
+Stance: **existing** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.0 · Items: 3
 
 ## At a glance
 

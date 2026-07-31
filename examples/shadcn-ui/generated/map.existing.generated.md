@@ -2,7 +2,7 @@
 
 # shadcn-ui — surface ↔ capability map
 
-Stance: **derived** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.0.0 · Items: 25
+Stance: **derived** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.0 · Items: 25
 
 ## Relationship counts
 

@@ -2,7 +2,7 @@
 
 # product-map — product surfaces (existing)
 
-Stance: **existing** · Commit: `4f27e94db53f` (dirty) · Generator: pmap@0.1.0 · Items: 5
+Stance: **existing** · Commit: `d264fe3116f3` (dirty) · Generator: pmap@0.1.0 · Items: 5
 
 ## At a glance
 

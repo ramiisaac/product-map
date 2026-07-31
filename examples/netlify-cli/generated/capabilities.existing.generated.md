@@ -2,7 +2,7 @@
 
 # netlify-cli — capabilities (existing)
 
-Stance: **existing** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.0.0 · Items: 29
+Stance: **existing** · Commit: `f214e69e4d8b` (clean) · Generator: pmap@0.1.0 · Items: 29
 
 ## At a glance
 

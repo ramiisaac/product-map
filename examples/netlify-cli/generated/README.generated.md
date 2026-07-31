@@ -2,7 +2,7 @@
 
 # netlify-cli — product map
 
-Extracted at commit `f214e69e4d8b` (clean tree) by pmap@0.0.0.
+Extracted at commit `f214e69e4d8b` (clean tree) by pmap@0.1.0.
 
 - **2 surfaces** across 1 types — [inventory](./surfaces.existing.generated.md)
 - **29 capabilities** across 2 kinds — [inventory](./capabilities.existing.generated.md)
