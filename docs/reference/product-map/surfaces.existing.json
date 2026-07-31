@@ -1,7 +1,7 @@
 {
   "contentHash": "5a11b73ed8974f74d9b8010a6febc01da7525f053a2bf529f66c9af6dc875e70",
   "generatedFrom": {
-    "commit": "88632aeb8038043793b0a0bac0f8dd0cd4897846",
+    "commit": "5097f2edcfe735a852730cb710cbc5677a8e4056",
     "sources": [
       ".claude-plugin/marketplace.json",
       "docs/reference/product-map/extract.local.mjs",

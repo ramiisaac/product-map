@@ -1,6 +1,6 @@
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join, resolve } from "node:path";
+import { join } from "node:path";
 
 import type { SurfaceManifest } from "@product-map/spec";
 import { finalizeManifest } from "@product-map/spec";
@@ -11,13 +11,14 @@ import { extractRepo } from "@product-map/extract";
 import { mapManifests } from "@product-map/derive";
 import { loadRepoContext } from "@product-map/discovery";
 
-const toolGenerator = { name: "pmap", version: "0.0.0" } as const;
+// A deliberately fictional version: the invariant is that the INJECTED
+// generator identity propagates unchanged into every artifact — check-fresh's
+// generator preservation depends on injectability. Asserting against any
+// package.json here made the test vacuously green while every version was
+// 0.0.0 and broke on the first real version PR, when the packages diverged.
+const toolGenerator = { name: "pmap", version: "7.7.7-test" } as const;
 
-const deriveContext = createDeriveContext({ name: "pmap", version: "0.0.0" });
-
-const packageVersion = (
-  JSON.parse(readFileSync(resolve(import.meta.dirname, "../../package.json"), "utf8")) as { version: string }
-).version;
+const deriveContext = createDeriveContext(toolGenerator);
 
 function fixtureRepo(): string {
   const root = mkdtempSync(join(tmpdir(), "pmap-generator-"));
@@ -31,13 +32,15 @@ function fixtureRepo(): string {
 }
 
 describe("generator identity", () => {
-  it("stamps the installed package version on every derived artifact", async () => {
+  it("stamps the injected generator identity on every derived artifact", async () => {
     const result = await extractRepo(loadRepoContext(fixtureRepo()), { generator: toolGenerator });
     const planned = finalizeManifest<SurfaceManifest>({ ...result.surfaces, stance: "planned" });
 
-    expect(result.surfaces.generator.version).toBe(packageVersion);
-    expect(result.capabilities.generator.version).toBe(packageVersion);
-    expect(mapManifests(result.surfaces, result.capabilities, deriveContext).generator.version).toBe(packageVersion);
-    expect(diffManifests(result.surfaces, planned, deriveContext).generator.version).toBe(packageVersion);
+    expect(result.surfaces.generator.version).toBe(toolGenerator.version);
+    expect(result.capabilities.generator.version).toBe(toolGenerator.version);
+    expect(mapManifests(result.surfaces, result.capabilities, deriveContext).generator.version).toBe(
+      toolGenerator.version,
+    );
+    expect(diffManifests(result.surfaces, planned, deriveContext).generator.version).toBe(toolGenerator.version);
   });
 });
