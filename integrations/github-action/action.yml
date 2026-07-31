@@ -10,7 +10,7 @@ inputs:
   version:
     description: Version of the product-map package to run. The release process keeps the default in lockstep with this repository's releases, so the gate only changes when a release ships; override to run a different version.
     required: false
-    default: "0.1.0"
+    default: "0.1.1"
   repo:
     description: Repository root to check, relative to the workspace.
     required: false

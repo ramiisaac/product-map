@@ -1,6 +1,6 @@
 {
   "name": "product-map",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Skills and commands for consuming-repo agents: inspect what any repo ships from the CLI, install and run pmap, keep product-map manifests fresh, author repo-local extractors, and run the Claude Design handoff loop.",
   "author": {
     "name": "ramiisaac"

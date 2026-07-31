@@ -1,5 +1,14 @@
 # product-map
 
+## 0.1.1
+
+### Patch Changes
+
+- [`e7faf57`](https://github.com/ramiisaac/product-map/commit/e7faf5718f07809c1d88b6380e4fc1534caf163d) Thanks [@ramiisaac](https://github.com/ramiisaac)! - No functional changes: this release exercises the trusted-publishing pipeline end to end — OIDC authentication, provenance, tags, and the GitHub Release — after the one-time manual 0.1.0 publish.
+
+- Updated dependencies []:
+  - @product-map/spec@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
