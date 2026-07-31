@@ -1,6 +1,6 @@
 {
   "name": "@product-map/derive",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "description": "Pure derivation of maps, diffs, and fleet roll-ups",

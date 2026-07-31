@@ -1,6 +1,6 @@
 {
   "name": "@product-map/discovery",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "description": "Repository crawl, package graph, and git context",
