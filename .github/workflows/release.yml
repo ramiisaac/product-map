@@ -42,6 +42,11 @@ jobs:
         with:
           version: pnpm version-packages
           publish: pnpm release
+          commit: "chore: version packages"
+          title: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
+          # the full gate already ran above; the action's own commits must not
+          # re-enter the local hooks (commitlint rejected its default message)
+          LEFTHOOK: "0"

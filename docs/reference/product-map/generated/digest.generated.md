@@ -1,4 +1,4 @@
-# product-map — product map (pmap 0.0.0 @ no-git, not-applicable)
+# product-map — product map (pmap 0.0.0 @ 5ba155c1, dirty)
 5 surfaces · 31 capabilities · 27 bound · 7 capability-unbound · 1 surface-unbound
 
 SURFACES

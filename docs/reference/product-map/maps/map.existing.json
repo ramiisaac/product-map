@@ -1,7 +1,7 @@
 {
   "contentHash": "67e6afbd6ac8c75a24be0cccdb747878939145a02b80ed9b9bf6b542a63f4511",
   "generatedFrom": {
-    "commit": null,
+    "commit": "5ba155c12e70192015d1843712cde16dbebe0275",
     "derivedFrom": [
       "5a11b73ed8974f74d9b8010a6febc01da7525f053a2bf529f66c9af6dc875e70",
       "95881986b8eccb44759ac11717fcf59a353a797696e901c17c4044e71b5bc499"
@@ -10,7 +10,7 @@
       "surfaces.existing.json",
       "capabilities.existing.json"
     ],
-    "workingTree": "not-applicable"
+    "workingTree": "dirty"
   },
   "generator": {
     "name": "pmap",

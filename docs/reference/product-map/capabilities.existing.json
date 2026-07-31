@@ -1,7 +1,7 @@
 {
   "contentHash": "95881986b8eccb44759ac11717fcf59a353a797696e901c17c4044e71b5bc499",
   "generatedFrom": {
-    "commit": null,
+    "commit": "5ba155c12e70192015d1843712cde16dbebe0275",
     "sources": [
       ".claude-plugin/marketplace.json",
       "docs/reference/product-map/extract.local.mjs",
@@ -18,7 +18,7 @@
       "plugins/product-map/.claude-plugin/plugin.json",
       "plugins/product-map/skills"
     ],
-    "workingTree": "not-applicable"
+    "workingTree": "dirty"
   },
   "generator": {
     "name": "pmap",
