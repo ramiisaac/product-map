@@ -2,7 +2,7 @@
 
 # product-map — gaps and follow-ups
 
-Stance: **derived** · Commit: `d264fe3116f3` (dirty) · Generator: pmap@0.1.0 · Items: 35
+Stance: **derived** · Commit: `e7faf5718f07` (dirty) · Generator: pmap@0.1.1 · Items: 35
 
 ## 1. Misplaced — move these to their canonical package
 

@@ -1,6 +1,6 @@
 {
   "name": "@product-map/extract",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "description": "Adapter contract, filesystem-convention adapters, deduplication, and the repository-local extractor protocol",
