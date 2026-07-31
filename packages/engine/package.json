@@ -1,6 +1,6 @@
 {
   "name": "@product-map/engine",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "description": "Command orchestration, the manifest slot registry, and the transactional writer",

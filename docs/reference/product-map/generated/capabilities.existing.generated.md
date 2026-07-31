@@ -2,7 +2,7 @@
 
 # product-map — capabilities (existing)
 
-Stance: **existing** · Commit: `5097f2edcfe7` (dirty) · Generator: pmap@0.0.0 · Items: 31
+Stance: **existing** · Commit: `4f27e94db53f` (dirty) · Generator: pmap@0.1.0 · Items: 31
 
 ## At a glance
 

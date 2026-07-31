@@ -1,7 +1,7 @@
 {
   "contentHash": "95881986b8eccb44759ac11717fcf59a353a797696e901c17c4044e71b5bc499",
   "generatedFrom": {
-    "commit": "5097f2edcfe735a852730cb710cbc5677a8e4056",
+    "commit": "4f27e94db53f55f48a2ba3d96769721605f3901e",
     "sources": [
       ".claude-plugin/marketplace.json",
       "docs/reference/product-map/extract.local.mjs",
@@ -22,7 +22,7 @@
   },
   "generator": {
     "name": "pmap",
-    "version": "0.0.0"
+    "version": "0.1.0"
   },
   "items": [
     {

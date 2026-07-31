@@ -1,6 +1,6 @@
 {
   "name": "product-map",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "pmap — extract, validate, map, diff, render, and freshness-check product-map.v1 manifests",
   "license": "MIT",
