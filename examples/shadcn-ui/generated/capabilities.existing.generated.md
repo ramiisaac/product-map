@@ -1,4 +1,4 @@
-<!-- generated from capabilities.existing.json@8063a18b3e80e1514f422dcf94cfe087c96fb96c2558f531f3c5392636e4d097 — do not edit -->
+<!-- generated from capabilities.existing.json@a0cfeac636c93493678311e0715944f5ac4f1d45d5e38e0740ab08da2194e7bb — do not edit -->
 
 # shadcn-ui — capabilities (existing)
 
@@ -16,19 +16,19 @@ Stance: **existing** · Commit: `4baadbc65170` (clean) · Generator: pmap@0.1.1 
 
 | Id | Name | Description | Area | Status | Lives in |
 | -- | ---- | ----------- | ---- | ------ | -------- |
-| `cap:command:shadcn.add` | shadcn add |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.apply` | shadcn apply |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.build` | shadcn build |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.diff` | shadcn diff |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.docs` | shadcn docs |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.eject` | shadcn eject |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.info` | shadcn info |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.init` | shadcn init |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.mcp` | shadcn mcp |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.migrate` | shadcn migrate |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.preset` | shadcn preset |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.search` | shadcn search |  | cli | live | `packages/shadcn` |
-| `cap:command:shadcn.view` | shadcn view |  | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.add` | shadcn add | add a component to your project | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.apply` | shadcn apply | apply a preset to an existing project | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.build` | shadcn build | build components for a shadcn registry | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.diff` | shadcn diff | [DEPRECATED] Use `add [component] --diff` instead. | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.docs` | shadcn docs | get docs, api references and usage examples for components | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.eject` | shadcn eject | inline shadcn/tailwind.css and remove the shadcn dependency | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.info` | shadcn info | get information about your project | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.init` | shadcn init | initialize your project and install dependencies | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.mcp` | shadcn mcp | MCP server and configuration commands | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.migrate` | shadcn migrate | run a migration. | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.preset` | shadcn preset | manage presets | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.search` | shadcn search | search items from registries | cli | live | `packages/shadcn` |
+| `cap:command:shadcn.view` | shadcn view | view items from the registry | cli | live | `packages/shadcn` |
 
 ## package (3)
 

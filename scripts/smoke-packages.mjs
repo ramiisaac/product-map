@@ -92,7 +92,7 @@ writeFileSync(
     },
   })}\n`,
 );
-run("pnpm", ["install", "--prefer-offline", "--ignore-scripts"], { cwd: installRoot });
+run("pnpm", ["install", "--ignore-workspace", "--prefer-offline", "--ignore-scripts"], { cwd: installRoot });
 
 const help = run("node", ["node_modules/product-map/dist/cli.js", "--help"], {
   cwd: installRoot,

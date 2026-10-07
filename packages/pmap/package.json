@@ -50,9 +50,11 @@
     "lint": "eslint --max-warnings=0"
   },
   "engines": {
-    "node": ">=22"
+    "node": "^22.18.0 || >=24.11.0"
   },
   "dependencies": {
+    "@babel/parser": "^8.0.6",
+    "@babel/traverse": "^8.0.6",
     "@product-map/spec": "workspace:*",
     "zod": "^4.4.3"
   },

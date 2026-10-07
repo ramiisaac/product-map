@@ -67,6 +67,10 @@ export function renderExplainCommand(inventory: Inventory, id: string | undefine
 
 const DESIGN_PROMPT_FILE = "claude-design-new-project.prompt.md";
 const REPO_TOKEN = /<REPO>/g;
+// The vendored template is also pasted by hand, where this sentence is true;
+// the bundle always substitutes the scope, so it is removed before substitution
+// rather than rewritten into a false instruction naming the repo.
+const SUBSTITUTION_INSTRUCTION = " Replace `<REPO>` before sending.";
 
 /**
  * The outbound leg of the design loop. `ingest` already handles the return
@@ -75,8 +79,9 @@ const REPO_TOKEN = /<REPO>/g;
  */
 export function renderBundleCommand(inventory: Inventory, assets: AssetPaths, options: ResolvedOptions): string {
   const prompt = readFileSync(join(assets.promptsDir, DESIGN_PROMPT_FILE), "utf8");
+  const scope = inventory.surfaces.scope;
   return [
-    prompt.replace(REPO_TOKEN, inventory.surfaces.scope),
+    prompt.replace(SUBSTITUTION_INSTRUCTION, "").replace(REPO_TOKEN, () => scope),
     "",
     "---",
     "",

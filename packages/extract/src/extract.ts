@@ -30,14 +30,13 @@ import { runLocalExtractor } from "./local-extractor";
  *
  * The scaffolding word may be wrapped in underscores or carry a qualifying
  * prefix — `__fixtures__` and `functions-templates` are both extremely common
- * and both slipped through a whole-segment match, which is why netlify-cli
- * reported ten test fixtures and function templates as product capabilities.
+ * and both slipped through a whole-segment match, which reported test
+ * fixtures and function templates as product capabilities.
  * Only a suffix match is accepted, so `templates-engine` stays a product.
  */
 const NON_PRODUCT_DIR =
   /(^|\/)(?:_{1,2})?(?:[a-z0-9]+[-_])*(templates?|fixtures?|examples?|tests?|generators?|sandbox|demos?|tooling|vendored?|third[-_]?party)(?:_{1,2})?(\/|$)|(^|\/)_(\/|$)/;
-// vendored-tree names that are also legitimate product words deeper in a repo
-// Some repositories use these words as legitimate product concepts deeper in the tree.
+// vendored-tree names that are also legitimate product words deeper in a repo;
 // exclude these only at the repo root, where they always mean vendored copies
 const ROOT_ONLY_NON_PRODUCT = /^(archives?|reference|backups?)(\/|$)/;
 
@@ -97,6 +96,14 @@ export async function extractRepo(
   const surfaceItems = applyConfig(dedupe(surfaceEntries, skipped), config, consumedOverrides);
   const capabilityItems = applyConfig(dedupe(capabilityEntries, skipped), config, consumedOverrides);
   reportUnconsumedOverrides(config, consumedOverrides, skipped);
+  // Implicit binds are judged against the final, post-override status, and are
+  // pruned before declared binds are applied: a declaration is skipped when a
+  // bind to the same capability already exists, so pruning afterwards would
+  // silently drop an explicit bind that should surface as a bound-conflict.
+  const absentCapabilityIds = new Set(capabilityItems.filter((c) => c.status === "absent").map((c) => c.id));
+  for (const surface of surfaceItems) {
+    surface.binds = surface.binds.filter((b) => b.via !== "inferred-high" || !absentCapabilityIds.has(b.capabilityId));
+  }
   applyDeclaredBinds(surfaceItems, config, skipped);
   // drop binds that reference capabilities we did not extract (never assert dangling ids)
   const capabilityIds = new Set(capabilityItems.map((c) => c.id));
@@ -108,13 +115,14 @@ export async function extractRepo(
   // directory belongs to that surface; a package capability extracted from
   // the same package.json as a bin surface backs that bin. These are
   // mechanical facts, not guesses — without them every map drowned in
-  // false orphan/unbound rows.
+  // false orphan/unbound rows. A capability whose final status is absent
+  // backs nothing, so it is never inferred into a binding.
   for (const surface of surfaceItems) {
     const dir = surface.placement.current;
     if (dir === "." || dir === "") continue;
     const bound = new Set(surface.binds.map((b) => b.capabilityId));
     for (const cap of capabilityItems) {
-      if (bound.has(cap.id)) continue;
+      if (bound.has(cap.id) || absentCapabilityIds.has(cap.id)) continue;
       const capDir = cap.placement.current;
       const sameDir = capDir === dir || capDir.startsWith(`${dir}/`);
       if (!sameDir) continue;
@@ -132,13 +140,17 @@ export async function extractRepo(
         surface.binds.push({ capabilityId: cap.id, via: "inferred-high", note: "bin declared by this package" });
       }
     }
-    // a per-command bin (terminari-render) binds its command (terminari.render)
+    // a per-command bin (tool-render) binds its command (tool.render)
     if (surface.surfaceType === "cli") {
       const binName = surface.entry.value;
       const dash = binName.indexOf("-");
       if (dash > 0) {
         const candidate = `cap:command:${binName.slice(0, dash)}.${binName.slice(dash + 1)}`;
-        if (capabilityIds.has(candidate) && !surface.binds.some((b) => b.capabilityId === candidate)) {
+        if (
+          capabilityIds.has(candidate) &&
+          !absentCapabilityIds.has(candidate) &&
+          !surface.binds.some((b) => b.capabilityId === candidate)
+        ) {
           surface.binds.push({ capabilityId: candidate, via: "inferred-high", note: "dedicated bin for this command" });
         }
       }

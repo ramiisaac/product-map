@@ -1,5 +1,5 @@
 {
-  "contentHash": "9ab8203977bc2525ea7e5816e0f8af051b49a37f55b1b1d614467a10a354e1f9",
+  "contentHash": "136506a7c2398c07e5363aeceb24c8b8b0933b2284f3f2e6e034833ce634cc25",
   "generatedFrom": {
     "commit": "f214e69e4d8b0d3ab0db2ed79e612873d7c09d43",
     "sources": [
@@ -44,7 +44,8 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/api/api.ts"
+          "src/commands/api/api.ts",
+          "src/commands/api/index.ts"
         ],
         "source": "src/commands"
       },
@@ -67,6 +68,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Manage objects in Netlify Blobs",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -83,10 +85,12 @@
         "confidence": "medium",
         "evidence": [
           "src/commands/build/build.ts",
-          "src/commands/logs/build.ts"
+          "src/commands/logs/build.ts",
+          "src/commands/build/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Build on your local machine",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -102,10 +106,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/claim/claim.ts"
+          "src/commands/claim/claim.ts",
+          "src/commands/claim/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Claim an anonymously deployed site and link it to your account",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -121,10 +127,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/clone/clone.ts"
+          "src/commands/clone/clone.ts",
+          "src/commands/clone/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Clone a remote repository and link it to an existing project on Netlify Use this command when the existing Netlify project is already configured to deploy from the existing repo. If you specify a target directory, the repo will be cloned into that directory. By default, a directory will be created with the name of the repo. To specify a project, use --id or --name. By default, the Netlify project to link will be automatically detected if exactly one project found is found with a matching git URL. If we cannot find such a project, you will be interactively prompted to select one.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -140,10 +148,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/completion/completion.ts"
+          "src/commands/completion/completion.ts",
+          "src/commands/completion/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Generate shell completion script Run this command to see instructions for your shell.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -163,6 +173,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Create a new Netlify project using an AI agent",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -182,6 +193,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Provision a production ready Postgres database with a single command",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -198,10 +210,12 @@
         "confidence": "medium",
         "evidence": [
           "src/commands/deploy/deploy.ts",
-          "src/commands/logs/sources/deploy.ts"
+          "src/commands/logs/sources/deploy.ts",
+          "src/commands/deploy/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Deploy your project to Netlify Builds and deploys your project to Netlify. Creates a draft deploy by default. Use --prod to deploy directly to your live site. The deploy command will: - Build your project (unless --no-build is specified) - Upload static files, functions, and edge functions - Process redirects and headers from netlify.toml or _redirects/_headers files - Provide deploy and function logs URLs For detailed configuration options, see the Netlify documentation.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -217,10 +231,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/dev/dev.ts"
+          "src/commands/dev/dev.ts",
+          "src/commands/dev/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Local dev server The dev command will run a local dev server with Netlify's proxy and redirect rules",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -236,10 +252,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/dev-exec/dev-exec.ts"
+          "src/commands/dev-exec/dev-exec.ts",
+          "src/commands/dev-exec/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Runs a command within the netlify dev environment. For example, with environment variables from any installed add-ons",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -259,6 +277,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Control environment variables for the current project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -294,10 +313,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/init/init.ts"
+          "src/commands/init/init.ts",
+          "src/commands/init/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Configure continuous deployment for a new or existing project. To create a new project without continuous deployment, use `netlify sites:create`",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -313,10 +334,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/link/link.ts"
+          "src/commands/link/link.ts",
+          "src/commands/link/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Link a local repo or project folder to an existing project on Netlify",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -332,10 +355,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/login/login.ts"
+          "src/commands/login/login.ts",
+          "src/commands/login/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Login to your Netlify account Opens a web browser to acquire an OAuth token.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -351,10 +376,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/logout/logout.ts"
+          "src/commands/logout/logout.ts",
+          "src/commands/logout/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Logout of your Netlify account",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -370,10 +397,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/logs/logs.ts"
+          "src/commands/logs/logs.ts",
+          "src/commands/logs/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "View logs from your project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -389,10 +418,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/open/open.ts"
+          "src/commands/open/open.ts",
+          "src/commands/open/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Open settings for the project linked to the current folder",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -408,10 +439,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/recipes/recipes.ts"
+          "src/commands/recipes/recipes.ts",
+          "src/commands/recipes/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Create and modify files in a project using pre-defined recipes",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -427,10 +460,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/serve/serve.ts"
+          "src/commands/serve/serve.ts",
+          "src/commands/serve/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Build the project for production and serve locally. This does not watch the code for changes, so if you need to rebuild your project then you must exit and run `serve` again.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -450,6 +485,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Handle various project operations The sites command will help you manage all your projects",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -465,10 +501,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/status/status.ts"
+          "src/commands/status/status.ts",
+          "src/commands/status/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Print status information",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -484,10 +522,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/switch/switch.ts"
+          "src/commands/switch/switch.ts",
+          "src/commands/switch/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Switch your active Netlify account",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -507,6 +547,7 @@
         ],
         "source": "src/commands"
       },
+      "purpose": "Handle various team operations The teams command will help you manage your teams",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -522,10 +563,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/unlink/unlink.ts"
+          "src/commands/unlink/unlink.ts",
+          "src/commands/unlink/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Unlink a local folder from a Netlify project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -541,10 +584,12 @@
       "provenance": {
         "confidence": "medium",
         "evidence": [
-          "src/commands/watch/watch.ts"
+          "src/commands/watch/watch.ts",
+          "src/commands/watch/index.ts"
         ],
         "source": "src/commands"
       },
+      "purpose": "Watch for project deploy to finish",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"

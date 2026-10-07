@@ -11,7 +11,8 @@ Before the first release, an npm package owner must configure a trusted publishe
 - Workflow: `release.yml`
 - Environment: leave blank unless the workflow is later assigned one
 
-Trusted publishing requires a public GitHub repository and npm package, Node.js 22.14 or newer, npm CLI 11.5.1 or newer, and `id-token: write`. The workflow uses Node.js 24 and installs a compatible npm CLI. No long-lived npm token is stored in GitHub.
+Trusted publishing requires a public GitHub repository and npm package, Node.js 22.14 or newer, npm CLI 11.5.1 or newer, and `id-token: write`. The workflow uses Node.js 24 and installs a compatible npm CLI.
+No long-lived npm token is stored in GitHub.
 
 ## Release flow
 
@@ -25,6 +26,7 @@ The workflow does not publish from pull requests and does not push ad-hoc releas
 
 ## Install
 
+Node.js must satisfy `^22.18.0 || >=24.11.0`, matching the JavaScript and TypeScript parser used for extraction.
 No registry mapping or authentication is required for consumers:
 
 ```bash

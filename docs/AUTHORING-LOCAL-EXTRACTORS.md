@@ -37,9 +37,12 @@ The generic adapters read filesystem conventions (bins, src/commands, Next app d
 
 - Registry 1:1: read a generated OpenAPI document or command registry and emit one capability for each declared operation, with CLI/MCP surfaces bound to the same ids.
 - Contract parsing: parse tool or command names from the declaring source file while preserving namespace boundaries in ids.
-- Frontmatter mining: lift each skill or plugin description into capability doctrine.
+- Frontmatter mining: lift each skill or plugin description into the capability's `purpose`, and any rules it states into `doctrine`.
 - Metadata enrichment: re-emit workspace packages with domain/layer metadata as doctrine, reusing generic adapter ids so curated entries supersede heuristics.
 - Curated semantics: add route descriptions when code cannot be parsed cheaply, but verify every description against the implementation.
+- Catch-all route backed by a manifest: when one route file such as `app/docs/[[...slug]]/page.tsx` serves every page listed in a content manifest or navigation file, read that manifest and re-emit the app surface under the generic adapter's id with one view per listed page, sorted by path.
+  The local item supersedes the adapter's surface whole, so carry over its entry, binds, and placement rather than only the views.
+  `pmap doctor` reports a surface whose view names contain `[...x]` or `[[...x]]` as a `catch-all-route` note, and the note clears once the enumerated pages replace the catch-all view.
 
 ## Any language
 

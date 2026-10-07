@@ -38,7 +38,7 @@ function allAdaptersFixture(): string {
   write(root, "apps/web/app/api/health/route.ts");
 
   pkg(root, "apps/api", { name: "@fixture/api", dependencies: { hono: "latest" } });
-  write(root, "apps/api/src/routes/users.ts");
+  write(root, "apps/api/src/routes/users.ts", 'export const users = new Hono().get("/", (c) => c.json([]));\n');
 
   pkg(root, "packages/lsp", { name: "@fixture/lsp", dependencies: { "vscode-languageserver": "latest" } });
   write(root, "packages/lsp/src/server.ts", "connection.onHover(() => null);\n");
@@ -57,11 +57,12 @@ function allAdaptersFixture(): string {
   pkg(root, "packages/reporters", { name: "@fixture/reporters" });
   write(root, "packages/reporters/src/html.ts");
   pkg(root, "packages/db", { name: "@fixture/db", dependencies: { "drizzle-orm": "latest" } });
-  write(root, "packages/db/src/schema/users.ts");
+  write(root, "packages/db/src/schema/users.ts", 'export const users = pgTable("users", { id: uuid("id") });\n');
 
   pkg(root, "apps/tui", { name: "@fixture/tui", dependencies: { ink: "latest" } });
   pkg(root, "apps/worker", { name: "@fixture/worker" });
   pkg(root, "packages/mcp", { name: "@fixture/mcp", dependencies: { "@modelcontextprotocol/sdk": "latest" } });
+  write(root, "packages/mcp/src/server.ts", 'import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";\n');
   write(root, "packages/mcp/src/tools/search.ts");
   pkg(root, "packages/sdk", { name: "@fixture/sdk", exports: { ".": "./dist/index.js" } });
 
@@ -207,6 +208,7 @@ describe("adapter coverage", () => {
       "package.json",
       `${JSON.stringify({ name: "@fixture/root-mcp", dependencies: { "@modelcontextprotocol/sdk": "latest" } })}\n`,
     );
+    write(root, "src/server.ts", 'import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";\n');
     write(root, "src/tools/search.ts");
 
     const result = await extractRepo(loadRepoContext(root), { generator: toolGenerator });

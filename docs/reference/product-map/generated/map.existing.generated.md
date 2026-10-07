@@ -2,7 +2,7 @@
 
 # product-map — surface ↔ capability map
 
-Stance: **derived** · Commit: `bd77f38afbfd` (dirty) · Generator: pmap@0.1.1 · Items: 35
+Stance: **derived** · Commit: `922fb81634df` (dirty) · Generator: pmap@0.1.1 · Items: 35
 
 ## Relationship counts
 

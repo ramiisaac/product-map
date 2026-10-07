@@ -1,5 +1,5 @@
 {
-  "contentHash": "8063a18b3e80e1514f422dcf94cfe087c96fb96c2558f531f3c5392636e4d097",
+  "contentHash": "a0cfeac636c93493678311e0715944f5ac4f1d45d5e38e0740ab08da2194e7bb",
   "generatedFrom": {
     "commit": "4baadbc6517070ae8f8feb2c97037adc2b305544",
     "sources": [
@@ -32,6 +32,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "add a component to your project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -51,6 +52,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "apply a preset to an existing project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -71,6 +73,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "build components for a shadcn registry",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -90,6 +93,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "[DEPRECATED] Use `add [component] --diff` instead.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -109,6 +113,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "get docs, api references and usage examples for components",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -128,6 +133,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "inline shadcn/tailwind.css and remove the shadcn dependency",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -147,6 +153,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "get information about your project",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -166,6 +173,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "initialize your project and install dependencies",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -186,6 +194,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "MCP server and configuration commands",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -205,6 +214,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "run a migration.",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -224,6 +234,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "manage presets",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -243,6 +254,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "search items from registries",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"
@@ -262,6 +274,7 @@
         ],
         "source": "packages/shadcn/src/commands"
       },
+      "purpose": "view items from the registry",
       "reach": "external",
       "status": "live",
       "surfaceArea": "cli"

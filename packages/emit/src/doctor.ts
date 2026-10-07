@@ -72,6 +72,12 @@ const REMEDY_ADAPTER_DUPLICATE =
   "one adapter emitted this id twice, so neither item can be renamed here: exclude it with `adapters.exclude` in product-map.config.mjs, and report the collision upstream";
 const REMEDY_ADAPTER_FAILURE =
   "silence the adapter with an `adapters.exclude` entry in product-map.config.mjs, and report the failure upstream";
+const REMEDY_CATCH_ALL =
+  "if a manifest or content collection decides which pages the catch-all serves, enumerate those pages as views from docs/reference/product-map/extract.local.mjs";
+
+// `[...slug]` and `[[...slug]]`: one route file that serves a set of pages the
+// filesystem does not enumerate, so the view list may be a fraction of the UI.
+const CATCH_ALL_SEGMENT = /\[\[\.\.\.[^\]]+\]\]|\[\.\.\.[^\]]+\]/;
 
 const SUPERSEDED_BY_LOCAL = "superseded by local";
 
@@ -158,6 +164,17 @@ export function diagnose(input: DoctorInput): DoctorData {
       code: "unbound-surface",
       detail: `${surface.id} (${surface.surfaceType}) fronts nothing`,
       remedy: REMEDY_CONFIG_BINDS,
+    });
+  }
+
+  for (const surface of input.surfaces.items) {
+    const catchAll = (surface.views ?? []).map((view) => view.name).filter((name) => CATCH_ALL_SEGMENT.test(name));
+    if (catchAll.length === 0) continue;
+    findings.push({
+      severity: "note",
+      code: "catch-all-route",
+      detail: `${surface.id} has catch-all view(s) ${catchAll.join(", ")} and may render more pages than its view list shows`,
+      remedy: REMEDY_CATCH_ALL,
     });
   }
 
