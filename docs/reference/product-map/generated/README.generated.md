@@ -2,7 +2,7 @@
 
 # product-map — product map
 
-Extracted at commit `922fb81634df` (dirty tree) by pmap@0.1.1.
+Extracted at commit `35a4a299f7b2` (dirty tree) by pmap@0.1.1.
 
 - **5 surfaces** across 4 types — [inventory](./surfaces.existing.generated.md)
 - **31 capabilities** across 3 kinds — [inventory](./capabilities.existing.generated.md)

@@ -197,6 +197,20 @@ describe("db-schema resolves schemas through each module's own scope", () => {
 
     expect(entities(root).map((entity) => entity.id)).toEqual(["cap:entity:db.reporting.daily"]);
   });
+
+  it.each([
+    ["a direct export", 'export let tenant = pgSchema("billing");\ntenant = pgSchema("crm");'],
+    ["an aliased export", 'let local = pgSchema("billing");\nlocal = pgSchema("crm");\nexport { local as tenant };'],
+  ])("does not resolve a reassigned schema through %s", (_label, source) => {
+    const root = schemaRepo({
+      "schemas.ts": source,
+      "contacts.ts": 'import { tenant } from "./schemas.js";\nexport const contacts = tenant.table("contacts", {});',
+      "fixed.ts": 'export const audit = pgSchema("audit");',
+      "events.ts": 'import { audit } from "./fixed.js";\nexport const events = audit.table("events", {});',
+    });
+
+    expect(entities(root).map((entity) => entity.id)).toEqual(["cap:entity:db.audit.events"]);
+  });
 });
 
 describe("db-schema reads table declarations from a real parse", () => {

@@ -55,6 +55,15 @@ function pgSchemaCall(node: NodeLike | null | undefined): string | null {
 
 function moduleScope(file: string, parsed: ScriptFile): ModuleScope {
   const scope: ModuleScope = { file, parsed, schemas: new Map(), exportedSchemas: new Map(), imports: new Map() };
+  const constantBindings = new Set<string>();
+  traverse(parsed, {
+    Program(path) {
+      for (const [name, binding] of Object.entries(path.scope.bindings)) {
+        if (binding.constant) constantBindings.add(name);
+      }
+      path.stop();
+    },
+  });
   const exportedLocals: Array<{ local: string; exported: string }> = [];
   for (const statement of parsed.program.body) {
     const exported = isNode(statement, "ExportNamedDeclaration");
@@ -62,7 +71,9 @@ function moduleScope(file: string, parsed: ScriptFile): ModuleScope {
     if (isNode(declaration, "VariableDeclaration")) {
       for (const declarator of declaration.declarations) {
         const schema = pgSchemaCall(declarator.init);
-        if (!isNode(declarator.id, "Identifier") || schema === null) continue;
+        if (!isNode(declarator.id, "Identifier") || schema === null || !constantBindings.has(declarator.id.name)) {
+          continue;
+        }
         scope.schemas.set(declarator.id.name, schema);
         if (exported) scope.exportedSchemas.set(declarator.id.name, schema);
       }
